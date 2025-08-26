@@ -1,24 +1,256 @@
 # Coding with AI
 
-  Techniques for coding with AI tools. Gathered from developer experiences and community contributions.
+## The Problem
 
-  🚀 **Live site**: [ai-coding-playbook.dev](https://ai-coding-playbook.dev)
+AI coding tools promise 10x productivity gains, but most developers struggle to achieve even 2x improvements. Why? Because knowing that Claude or Cursor exists isn't enough - you need to know **how** to use them effectively.
 
-  ## Contributing
+The difference between developers who achieve transformative results and those who don't isn't the tools - it's knowing the specific techniques, commands, and workflows that unlock their full potential.
 
-  ### Share Your Experience
-  Have experience with an existing technique? [Share it here](https://github.com/inmve/coding-with-ai/issues/new).
+## The Solution
 
-  ### Suggest New Techniques
-  Know a technique that should be included? [Suggest it here](https://github.com/inmve/coding-with-ai/issues/new).
+This repository collects **proven, specific techniques** from developers who've achieved real productivity gains with AI coding tools. Not theory or marketing claims - actual patterns that developers use daily to ship faster and better.
 
-  ### General Feedback
-  Ideas for improvement? [Let me know](https://github.com/inmve/coding-with-ai/issues/new) or email
-  [hi@coding-with-ai.dev](mailto:hi@ai-coding-playbook.dev).
+Each technique includes:
+- **What to do** - Clear, actionable instructions
+- **How to do it** - Specific commands and configurations
+- **Real experiences** - Quotes from developers who actually use it
 
-  ## What Makes a Good Technique
+🚀 **Live site**: [ai-coding-playbook.dev](https://ai-coding-playbook.dev)
 
-  - **Real usage** - You actually use this, not just theory
-  - **Specific** - "Ask Claude to refactor while preserving tests" not "use AI for refactoring"
-  - **Actionable** - Others can immediately try it
-  - **Quote-worthy** - You can describe your experience with it
+📝 **Contributing**: See [CONTRIBUTING.md](CONTRIBUTING.md) to share your techniques and experiences
+
+## Table of Contents
+- [Requirements & Planning](#requirements-planning)
+- [UI & Prototyping](#ui-prototyping)
+- [Coding](#coding)
+- [Debugging](#debugging)
+- [Testing & QA](#testing-qa)
+- [Cross-Stage Techniques](#cross-stage-techniques)
+
+---
+
+## Requirements & Planning
+
+### Read, Plan, Code, Commit
+
+Make it explore the code, then make a plan, implement it, and commit.
+
+> "There's a process that I call 'priming' the agent, where instead of having the agent jump straight to performing a task, I have it read additional context upfront to increase the chances that it will produce good outputs."
+> — Indragie Karunaratne
+
+### Set Up Memory Files
+
+Create context files that persistently guide tools about your project's structure, standards, and preferences.
+
+> "`CLAUDE.md` is a special file that Claude automatically pulls into context when starting a conversation. This makes it an ideal place for documenting: common bash commands, core files and utility functions, code style guidelines, testing instructions."
+> — Anthropic
+
+### Write Detailed Specs
+
+Give comprehensive specs - even a conversational spec beats vague instructions.
+
+> "Here's a recent example: `Write a Python function that uses asyncio httpx with this signature:` `async def download_db(url, max_size_bytes=5 * 1025 * 1025): -> pathlib.Path`. Given a URL, this downloads the database to a temp directory and returns a path to it. BUT it checks the content length header at the start of streaming back that data and, if it's more than the limit, raises an error... I find LLMs respond extremely well to function signatures like the one I use here."
+> — Simon Willison
+
+### Brain First, AI Second
+
+Draft the solution yourself first, then use assistants to refine it.
+
+> "I'm subconsciously defaulting to AI for all things coding. I've been using pen and paper less. As soon as I need to plan a new feature, my first thought is asking o4-mini-high how to do it, instead of my neurons. I hate this. And I'm changing it."
+> — Alberto Fortin
+
+### Get Multiple Options
+
+Ask LLM to present several approaches with pros/cons so you can choose the best option.
+
+> "I'll use prompts like `what are options for HTTP libraries in Rust? Include usage examples`"
+> — Simon Willison
+
+### Choose Boring, Stable Libraries
+
+Deliberately pick well-established libraries with good stability that existed before AI training cutoff dates for better AI code generation.
+
+> "I gain enough value from LLMs that I now deliberately consider this when picking a library—I try to stick with libraries with good stability and that are popular enough that many examples of them will have made it into the training data. I like applying the principles of boring technology—innovate on your project's unique selling points, stick with tried and tested solutions for everything else."
+> — Simon Willison
+
+### Ask to Think First
+
+Use `think` or `think hard` to trigger more careful planning before coding.
+
+> "Claude tends to jump straight into implementation without sufficient background, which generates poor quality results. Another tactic for priming the agent is asking Claude to use its extended thinking mode and make a plan first. The extended thinking is activated by this set of magic keywords: `think` < `think hard` < `think harder` < `ultrathink.` These are not just suggestions to the model—they are specific phrases that activate various levels of extended thinking."
+> — Indragie Karunaratne
+
+## UI & Prototyping
+
+### Vibe Coding
+
+Build projects through conversation rather than traditional coding - talk, accept changes, and iterate until it works.
+
+> "...I ask for the dumbest things like `decrease the padding on the sidebar by half` because I'm too lazy to find it. I `Accept All` always, I don't read the diffs anymore. When I get error messages I just copy paste them in with no comment, usually that fixes it. The code grows beyond my usual comprehension, I'd have to really read through it for a while. Sometimes the LLMs can't fix a bug so I just work around it or ask for random changes until it goes away. It's not too bad for throwaway weekend projects, but still quite amusing. I'm building a project or webapp, but it's not really coding—I just see stuff, say stuff, run stuff, and copy paste stuff, and it mostly works."
+> — Andrej Karpathy
+
+### Build a Prototype First
+
+Start every project with a quick generated prototype to prove it can work.
+
+> "The best way to start any project is with a prototype that proves that the key requirements of that project can be met. I often find that an LLM can get me to that working prototype within a few minutes of me sitting down with my laptop—or sometimes even while working on my phone."
+> — Simon Willison
+
+### Show Screenshots
+
+Drop in screenshots and iterate - take a screenshot of the result, compare, repeat.
+
+> "Give Claude a visual mock by copying / pasting or drag-dropping an image... take screenshots of the result, and iterate until its result matches the mock."
+> — Anthropic
+
+> "I opened a second copy of Sketch and pasted in a screenshot... `this is ugly, please make it less ugly.`"
+> — David Crawshaw
+
+### Make It More Beautiful
+
+Just ask to make the UI `more beautiful` or `more elegant` - it works.
+
+> "If Claude doesn't produce a well-designed UI the first time, you can just tell it to `make it more beautiful/elegant/usable`."
+> — Indragie Karunaratne
+
+## Coding
+
+### Generate Code, Not Dependencies
+
+Write custom code rather than pulling in more libraries when working with assistants.
+
+> "Be even more conservative about upgrades than before... I strongly prefer more code generation over using more dependencies."
+> — Armin Ronacher
+
+### Prime with Existing Code
+
+Start by dumping existing code into the chat to seed the context, then modify from there.
+
+> "I often start a new chat by dumping in existing code to seed that context, then work with the LLM to modify it in some way."
+> — Simon Willison
+
+### Give Exact Function Signatures
+
+Give exactly what function signature you want - let it handle the implementation details.
+
+> "I find LLMs respond extremely well to function signatures like the one I use here. I get to act as the function designer, the LLM does the work of building the body to my specification. I'll often follow-up with `Now write me the tests using pytest`. Again, I dictate my technology of choice—I want the LLM to save me the time of having to type out the code that's sitting in my head already."
+> — Simon Willison
+
+### Offload Tedious Tasks
+
+Delegate boring, systematic, and time-consuming tasks to AI - from small variable renames to large migrations that don't require deep architectural thinking.
+
+> "I'm using LLMs, but for dumber things: `rename all occurrences of this parameter`"
+> — Alberto Fortin
+
+> "AI's best use case for me remains writing one-off scripts"
+> — Colton
+
+> "I give the agent tasks that I could do without thinking too much but that would take me a lot of time—very systematic tasks that a junior developer could do with the right explanations."
+> — Between the Prompts
+
+> "The best example I've found for the agent was migrating a huge app from one UI library to another. It's not hard work, but it takes a huge amount of time and is completely uninteresting."
+> — Between the Prompts
+
+### Treat AI as a Digital Intern
+
+Give AI extremely precise, detailed instructions like you would to an intern - provide exact function signatures and let it handle implementation.
+
+> "Once I've completed the initial research I change modes dramatically. For production code my LLM usage is much more authoritarian: I treat it like a digital intern, hired to type code for me based on my detailed instructions."
+> — Simon Willison
+
+> "But instead of fixing the code myself, I explained why it was wrong and gave it more precise instructions. When I told it `You misunderstood, it should…` and provided clearer guidance, I was impressed at how it could understand the problem and update the code accordingly."
+> — Between the Prompts
+
+### Keep Code Dead Simple
+
+Write straightforward code with clear function names, avoid inheritance and clever hacks - simple code works better with AI.
+
+> "Simple code significantly outperforms complex code in agentic contexts. I just recently wrote about ugly code and I think in the context of agents this is worth re-reading. Have the agent do `the dumbest possible thing that will work`."
+> — Armin Ronacher
+
+## Debugging
+
+### Let It Test and Fix Itself
+
+Set up tools to make changes, run tests, see what fails, and try again on their own.
+
+> "Claude is most useful when it's capable of independently driving feedback loops that allow it to make a change, test the change, and gather context on what failed to try another iteration."
+> — Indragie Karunaratne
+
+### Use Subagents to Double-Check
+
+Spawn subagents to verify details or investigate specific questions.
+
+> "Telling Claude to use subagents to verify details or investigate particular questions it might have, especially early on in a conversation or task, tends to preserve context availability without much downside in terms of lost efficiency."
+> — Anthropic
+
+### Log Everything for AI Debugging
+
+Design systems with comprehensive logging so AI agents can read logs to understand what's happening and self-diagnose issues.
+
+> "In general logging is super important. For instance my app currently has a sign in and register flow that sends an email to the user. In debug mode (which the agent runs in), the email is just logged to stdout. This is crucial! It allows the agent to complete a full sign-in with a remote controlled browser without extra assistance. It knows that emails are being logged thanks to a CLAUDE.md instruction and it automatically consults the log for the necessary link to click."
+> — Armin Ronacher
+
+## Testing & QA
+
+### Write Tests First, Then Code
+
+Have AI write comprehensive tests based on expected behavior, then iterate on implementation until all tests pass.
+
+> "Ask Claude to write tests based on expected input/output pairs. Be explicit about the fact that you're doing test-driven development so that it avoids creating mock implementations, even for functionality that doesn't exist yet in the codebase. Tell Claude to run the tests and confirm they fail. Ask Claude to commit the tests when you're satisfied with them. Ask Claude to write code that passes the tests, instructing it not to modify the tests."
+> — Anthropic
+
+## Cross-Stage Techniques
+
+### Run Multiple Agents in Parallel
+
+Stop waiting for one AI agent to finish before starting another - run multiple agents in parallel on separate features without conflicts or confusion.
+
+> "We are exploring solving both of these issues in sketch.dev using containers. By default sketch creates a little development environment in a container with a copy of the source code and the runner has the ability to extract git commits from the container. This lets you run many simultaneously."
+> — David Crawshaw
+
+> "I disable all permission checks. Which basically means I run claude --dangerously-skip-permissions. More specifically I have an alias called claude-yolo set up."
+> — Armin Ronacher
+
+### Learn From It, Code Yourself
+
+Use assistants to learn new languages and concepts, then apply that knowledge when you code.
+
+> "I'm leveraging them to learn Go, to upskill myself. And then I apply this new knowledge when I code."
+> — Alberto Fortin
+
+### Start Cheap, Escalate When Stuck
+
+Begin with faster/cheaper models for routine tasks, then escalate to more powerful models only when you hit complex problems.
+
+> "Sonnet 4 handles 90% of tasks effectively. Switch to Opus when Sonnet gets stuck. Recommend starting with Sonnet and providing comprehensive context."
+> — Sankalp
+
+### Build Fast, Foolproof Tools
+
+Create tools that respond quickly, provide clear error messages, and protect against being used incorrectly by AI agents.
+
+> "Tools need to be fast. The quicker they respond (and the less useless output they produce) the better. Crashes are tolerable; hangs are problematic. Tools need to be user friendly! Tools must clearly inform agents of misuse or errors to ensure forward progress. Tools need to be protected against an LLM chaos monkey using them completely wrong. There is no such thing as user error or undefined behavior!"
+> — Armin Ronacher
+
+### Clear Context Between Tasks
+
+Reset the AI's context window between unrelated tasks to prevent confusion and improve performance on new problems.
+
+> "During long sessions, Claude's context window can fill with irrelevant conversation, file contents, and commands. This can reduce performance and sometimes distract Claude. Use the `/clear` command frequently between tasks to reset the context window."
+> — Anthropic
+
+### Interrupt and Redirect Often
+
+Don't let AI go too far down the wrong path - interrupt, provide feedback, and redirect as soon as you notice issues.
+
+> "Press Escape to interrupt Claude during any phase (thinking, tool calls, file edits), preserving context so you can redirect or expand instructions. Double-tap Escape to jump back in history, edit a previous prompt, and explore a different direction. You can edit the prompt and repeat until you get the result you're looking for."
+> — Anthropic
+
+### Use AI as Coding Partner
+
+Collaborate like with a coding partner - explain problems, get feedback, and work together on solutions.
+
+> "Claude Code feels like pairing with someone with a few years under their belt who just needs the occasional nudge. Then like with pairing, it's review, refactor and test time because it's still your name on the git commit."
+> — Orta Therox
