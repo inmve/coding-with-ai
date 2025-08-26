@@ -20,11 +20,11 @@ Each technique includes:
 📝 **Contributing**: See [CONTRIBUTING.md](CONTRIBUTING.md) to share your techniques and experiences
 
 ## Table of Contents
-- [Requirements & Planning](#requirements-planning)
-- [UI & Prototyping](#ui-prototyping)
+- [Requirements & Planning](#requirements--planning)
+- [UI & Prototyping](#ui--prototyping)
 - [Coding](#coding)
 - [Debugging](#debugging)
-- [Testing & QA](#testing-qa)
+- [Testing & QA](#testing--qa)
 - [Cross-Stage Techniques](#cross-stage-techniques)
 
 ---
