@@ -11,8 +11,8 @@ After digging into how developers are actually using these tools, I found specif
 There are specific patterns that separate moderate gains from transformative results. Examples:
 
 - **Memory files** (CLAUDE.md, .cursorrules) that persist context across sessions - many developers don't know these exist
-- **Test-and-regenerate loops** - Let AI iterate against tests instead of debugging
-- **Parallel agent workflows** - Run multiple AI sessions simultaneously without conflicts
+- **Test-driven regeneration** - let AI iterate against tests instead of debugging line by line
+- **Parallel AI sessions** - run multiple agents simultaneously using git worktrees or containers
 
 These techniques are scattered across documentation, blog posts, and threads. Finding them requires knowing what to look for.
 
@@ -21,8 +21,6 @@ These techniques are scattered across documentation, blog posts, and threads. Fi
 If you're already using AI coding tools but suspect you're only scratching the surface - you're probably right.
 
 This collection fills in those gaps.
-
-🚀 **Live site**: [ai-coding-playbook.dev](https://ai-coding-playbook.dev)
 
 📝 **Contributing**: See [CONTRIBUTING.md](CONTRIBUTING.md) to share your techniques and experiences
 
