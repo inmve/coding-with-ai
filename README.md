@@ -1,19 +1,26 @@
-# Coding with AI
+# There's a huge gap between AI coding demos and daily reality
 
-## The Problem
+I've been using Claude Code and Codex CLI daily for 6 weeks, and Cursor for over a year before that. Good results, definitely faster than before. But reading what others achieve, I kept wondering: what am I missing?
 
-AI coding tools promise 10x productivity gains, but most developers struggle to achieve even 2x improvements. Why? Because knowing that Claude or Cursor exists isn't enough - you need to know **how** to use them effectively.
+Turns out, quite a bit.
 
-The difference between developers who achieve transformative results and those who don't isn't the tools - it's knowing the specific techniques, commands, and workflows that unlock their full potential.
+After digging into how developers are actually using these tools, I found specific techniques that many of us don't know about. [Indragie Karunaratne shipped an entire macOS app with Claude](https://www.indragie.com/blog/i-shipped-a-macos-app-built-entirely-by-claude-code) - but how? Developers describe migrating entire UI libraries in hours instead of weeks - using what workflow exactly?
 
-## The Solution
+## The techniques you're probably not using
 
-This repository collects **proven, specific techniques** from developers who've achieved real productivity gains with AI coding tools. Not theory or marketing claims - actual patterns that developers use daily to ship faster and better.
+There are specific patterns that separate moderate gains from transformative results. Examples:
 
-Each technique includes:
-- **What to do** - Clear, actionable instructions
-- **How to do it** - Specific commands and configurations
-- **Real experiences** - Quotes from developers who actually use it
+- **Memory files** (CLAUDE.md, .cursorrules) that persist context across sessions - many developers don't know these exist
+- **Test-and-regenerate loops** - Let AI iterate against tests instead of debugging
+- **Parallel agent workflows** - Run multiple AI sessions simultaneously without conflicts
+
+These techniques are scattered across documentation, blog posts, and threads. Finding them requires knowing what to look for.
+
+## Who this is for
+
+If you're already using AI coding tools but suspect you're only scratching the surface - you're probably right.
+
+This collection fills in those gaps.
 
 🚀 **Live site**: [ai-coding-playbook.dev](https://ai-coding-playbook.dev)
 
