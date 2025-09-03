@@ -23,6 +23,7 @@ If you're already using AI coding tools but suspect you're only scratching the s
 This curated collection fills in those gaps. It's a living document, and you're welcome to share any missing techniques as well as your experience with the existing ones. 
 
 🚀 **Live site**: [coding-with-ai.dev](https://coding-with-ai.dev)
+
 📝 **Contributing**: See [CONTRIBUTING.md](CONTRIBUTING.md) to share your techniques and experiences
 
 ## Table of Contents
