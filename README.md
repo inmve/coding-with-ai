@@ -6,8 +6,6 @@ I've been using Claude Code and Codex CLI daily for 6 weeks, and Cursor for over
 
 Turns out, quite a bit.
 
-After digging into how developers are actually using these tools, I found specific techniques that many of us don't know about. [Indragie Karunaratne shipped an entire macOS app with Claude](https://www.indragie.com/blog/i-shipped-a-macos-app-built-entirely-by-claude-code) - but how? Developers describe migrating entire UI libraries in hours instead of weeks - using what workflow exactly?
-
 ## The techniques you're probably not using
 
 There are specific patterns that separate moderate gains from transformative results. Examples:
@@ -22,8 +20,9 @@ These techniques are scattered across documentation, blog posts, and threads. Fi
 
 If you're already using AI coding tools but suspect you're only scratching the surface - you're probably right.
 
-This collection fills in those gaps.
+This curated collection fills in those gaps. It's a living document, and you're welcome to share any missing techniques as well as your experience with the existing ones. 
 
+🚀 **Live site**: [coding-with-ai.dev](https://coding-with-ai.dev)
 📝 **Contributing**: See [CONTRIBUTING.md](CONTRIBUTING.md) to share your techniques and experiences
 
 ## Table of Contents
