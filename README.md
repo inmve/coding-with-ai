@@ -1,3 +1,5 @@
+**Available Languages:** [English](README.md) | [Español](README-es.md) | [Deutsch](README-de.md) | [Français](README-fr.md) | [日本語](README-ja.md)
+
 # There's a gap between AI coding demos and daily reality
 
 I've been using Claude Code and Codex CLI daily for 6 weeks, and Cursor for over a year before that. Good results, definitely faster than before. But reading what others achieve, I kept wondering: what am I missing?
