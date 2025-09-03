@@ -22,7 +22,7 @@ If you're already using AI coding tools but suspect you're only scratching the s
 
 This collection fills in those gaps.
 
-🚀 **Live site**: [ai-coding-playbook.dev](https://ai-coding-playbook.dev)
+🚀 **Live site**: [coding-with-ai.dev](https://coding-with-ai.dev)
 
 📝 **Contributing**: See [CONTRIBUTING.md](CONTRIBUTING.md) to share your techniques and experiences
 
