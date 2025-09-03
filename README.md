@@ -18,7 +18,7 @@ These techniques are scattered across documentation, blog posts, and threads. Fi
 
 If you're already using AI coding tools but suspect you're only scratching the surface - you're probably right.
 
-This collection fills in those gaps.
+This curated collection fills in those gaps.
 
 🚀 **Live site**: [coding-with-ai.dev](https://coding-with-ai.dev)
 
