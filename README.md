@@ -1,6 +1,8 @@
-**Available Languages:** [English](README.md) | [Español](README-es.md) | [Deutsch](README-de.md) | [Français](README-fr.md) | [日本語](README-ja.md)
+> **Active Development** — Updated September 5, 2025  
+> Latest: Added "Ask Open Questions, Not Leading Ones" technique  
+> [See all updates →](CHANGELOG.md)
 
-**Last Updated:** September 4, 2025
+**Available Languages:** [English](README.md) | [Español](README-es.md) | [Deutsch](README-de.md) | [Français](README-fr.md) | [日本語](README-ja.md)
 
 > **Note:** For the best experience, visit the [website](https://codingwithai.dev) where you can see the popularity of each technique based on community engagement and discover which approaches developers find most valuable.
 
@@ -76,6 +78,10 @@ Ask LLM to present several approaches with pros/cons so you can choose the best 
 
 > "I'll use prompts like `what are options for HTTP libraries in Rust? Include usage examples`"
 > — [Simon Willison](https://simonwillison.net/2025/Mar/11/using-llms-for-code/#:~:text=I'll%20use%20prompts%20like)
+
+### Ask Open Questions, Not Leading Ones
+
+Avoid 'Am I right that...' questions - instead ask for pros/cons, alternatives, and 'What am I missing?' to counteract LLM's tendency to agree.
 
 ### Choose Boring, Stable Libraries
 
