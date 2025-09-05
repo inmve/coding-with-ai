@@ -1,3 +1,7 @@
+> **Desarrollo Activo** — Actualizado 5 de septiembre de 2025  
+> Último: Añadida técnica "Haz Preguntas Abiertas, No Dirigidas"  
+> [Ver todas las actualizaciones →](CHANGELOG.md)
+
 **Idiomas disponibles:** [English](README.md) | [Español](README-es.md) | [Deutsch](README-de.md) | [Français](README-fr.md) | [日本語](README-ja.md)
 
 # Hay una brecha entre las demos de codificación con IA y la realidad diaria
@@ -87,6 +91,10 @@ Pide al LLM que presente varios enfoques con pros/contras para que puedas elegir
 
 > "Usaré prompts como `¿cuáles son las opciones para bibliotecas HTTP en Rust? Incluye ejemplos de uso`"
 > — Traducido por Claude
+
+### Haz Preguntas Abiertas, No Dirigidas
+
+Evita preguntas como '¿Tengo razón en que...?' - en su lugar, pide pros/contras, alternativas y '¿Qué me estoy perdiendo?' para contrarrestar la tendencia del LLM a estar de acuerdo.
 
 ### Elegir Bibliotecas Aburridas y Estables
 

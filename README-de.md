@@ -1,3 +1,7 @@
+> **Aktive Entwicklung** — Aktualisiert am 5. September 2025  
+> Neueste: Technik "Offene Fragen stellen, keine suggestiven" hinzugefügt  
+> [Alle Updates ansehen →](CHANGELOG.md)
+
 **Verfügbare Sprachen:** [English](README.md) | [Español](README-es.md) | [Deutsch](README-de.md) | [Français](README-fr.md) | [日本語](README-ja.md)
 
 # Es gibt eine Lücke zwischen AI-Coding-Demos und der täglichen Realität
@@ -87,6 +91,10 @@ Bitten Sie das LLM, mehrere Ansätze mit Vor-/Nachteilen zu präsentieren, damit
 
 > "Ich verwende Prompts wie `was sind Optionen für HTTP-Bibliotheken in Rust? Füge Verwendungsbeispiele hinzu`"
 > — Übersetzt von Claude
+
+### Offene Fragen stellen, keine suggestiven
+
+Vermeiden Sie Fragen wie 'Habe ich recht, dass...?' - fragen Sie stattdessen nach Vor-/Nachteilen, Alternativen und 'Was übersehe ich?' um der Tendenz des LLM entgegenzuwirken, zuzustimmen.
 
 ### Langweilige, stabile Bibliotheken wählen
 

@@ -1,3 +1,7 @@
+> **Développement Actif** — Mis à jour le 5 septembre 2025  
+> Dernière : Ajout de la technique "Posez des Questions Ouvertes, Pas Suggestives"  
+> [Voir toutes les mises à jour →](CHANGELOG.md)
+
 **Langues disponibles :** [English](README.md) | [Español](README-es.md) | [Deutsch](README-de.md) | [Français](README-fr.md) | [日本語](README-ja.md)
 
 # Il y a un fossé entre les démos de codage IA et la réalité quotidienne
@@ -87,6 +91,10 @@ Demandez au LLM de présenter plusieurs approches avec des avantages/inconvénie
 
 > "J'utilise des prompts comme `quelles sont les options pour les bibliothèques HTTP en Rust ? Inclus des exemples d'utilisation`"
 > — Traduit par Claude
+
+### Posez des Questions Ouvertes, Pas Suggestives
+
+Évitez les questions comme 'Ai-je raison de penser que...?' - demandez plutôt des avantages/inconvénients, des alternatives et 'Qu'est-ce que je rate ?' pour contrer la tendance du LLM à être d'accord.
 
 ### Choisir des bibliothèques ennuyeuses et stables
 
