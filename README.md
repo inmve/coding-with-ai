@@ -1,9 +1,6 @@
 > **Active Development** — Updated September 5, 2025  
 > Latest: Added "Ask Open Questions, Not Leading Ones" technique  
 > [See all updates →](CHANGELOG.md)
-
-**Available Languages:** [English](README.md) | [Español](README-es.md) | [Deutsch](README-de.md) | [Français](README-fr.md) | [日本語](README-ja.md)
-
 > **Note:** For the best experience, visit the [website](https://coding-with-ai.dev) where you can see the popularity of each technique based on community engagement and discover which approaches developers find most valuable.
 
 # There's a gap between AI coding demos and daily reality
@@ -31,6 +28,8 @@ This curated collection fills in those gaps. It's a living document, and you're 
 🚀 **Live site**: [coding-with-ai.dev](https://coding-with-ai.dev)
 
 📝 **Contributing**: See [CONTRIBUTING.md](CONTRIBUTING.md) to share your techniques and experiences
+
+**Available Languages:** [English](README.md) | [Español](README-es.md) | [Deutsch](README-de.md) | [Français](README-fr.md) | [日本語](README-ja.md)
 
 ## Table of Contents
 - [Requirements & Planning](#requirements--planning)
