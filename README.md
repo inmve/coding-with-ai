@@ -1,6 +1,7 @@
 > **Active Development** — Updated September 5, 2025  
 > Latest: Added "Ask Open Questions, Not Leading Ones" technique  
 > [See all updates →](CHANGELOG.md)
+> 
 > **Note:** For the best experience, visit the [website](https://coding-with-ai.dev) where you can see the popularity of each technique based on community engagement and discover which approaches developers find most valuable.
 
 # There's a gap between AI coding demos and daily reality
