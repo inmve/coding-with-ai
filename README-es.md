@@ -1,5 +1,5 @@
-> **Desarrollo Activo** — Actualizado 5 de septiembre de 2025  
-> Último: Añadida técnica "Haz Preguntas Abiertas, No Dirigidas"  
+> **Desarrollo Activo** — Actualizado 11 de septiembre de 2025  
+> Último: Añadidas 6 nuevas técnicas del proyecto ai_stack  
 > [Ver todas las actualizaciones →](CHANGELOG.md)
 
 **Idiomas disponibles:** [English](README.md) | [Español](README-es.md) | [Deutsch](README-de.md) | [Français](README-fr.md) | [日本語](README-ja.md)
@@ -224,6 +224,16 @@ Delega tareas aburridas, sistemáticas y que consumen tiempo a la IA - desde peq
 > "El mejor ejemplo que he encontrado para el agente fue migrar una aplicación enorme de una librería de UI a otra. No es trabajo difícil, pero toma una cantidad enorme de tiempo y es completamente desinteresante."
 > — Traducido por Claude
 
+### Proporcionar Contexto para Nuevas Librerías
+
+Cuando uses librerías fuera de los datos de entrenamiento de la IA, proporcionale ejemplos recientes y documentación para enseñarle cómo funciona la librería.
+
+> "LLMs can still help you work with libraries that exist outside their training data, but you need to put in more work—you'll need to feed them recent examples of how those libraries should be used as part of your prompt."
+> — [Simon Willison](https://simonwillison.net/2025/Mar/11/using-llms-for-code/#:~:text=LLMs%20can%20still%20help%20you%20work%20with%20libraries)
+
+> "Los LLMs aún pueden ayudarte a trabajar con librerías que existen fuera de sus datos de entrenamiento, pero necesitas hacer más trabajo—necesitarás alimentarlos con ejemplos recientes de cómo esas librerías deben ser usadas como parte de tu prompt."
+> — Traducido por Claude
+
 ### Tratar la IA como un Interno Digital
 
 Da a la IA instrucciones extremadamente precisas y detalladas como lo harías con un interno - proporciona firmas de función exactas y deja que maneje la implementación.
@@ -294,6 +304,36 @@ Haz que la IA escriba pruebas comprehensivas basadas en el comportamiento espera
 > "Pide a Claude que escriba pruebas basadas en pares de entrada/salida esperados. Sé explícito sobre el hecho de que estás haciendo desarrollo basado en pruebas para que evite crear implementaciones simuladas, incluso para funcionalidad que aún no existe en la base de código. Dile a Claude que ejecute las pruebas y confirme que fallan. Pide a Claude que confirme las pruebas cuando estés satisfecho con ellas. Pide a Claude que escriba código que pase las pruebas, instruyéndole que no modifique las pruebas."
 > — Traducido por Claude
 
+### Pedir al Agente que Revise su Propio Código
+
+Haz que la IA realice una revisión de código de su propio trabajo antes de la revisión humana para descubrir problemas y mejoras.
+
+> "Asking the agent to perform a code review on its own work is surprisingly fruitful."
+> — [Chris Dzombak](https://www.dzombak.com/blog/2025/08/getting-good-results-from-claude-code/#:~:text=Asking%20the%20agent%20to%20perform%20a%20code%20review)
+
+> "Pedir al agente que realice una revisión de código de su propio trabajo es sorprendentemente fructífero."
+> — Traducido por Claude
+
+### Uno Escribe, Otro Revisa
+
+Haz que un agente escriba código, luego usa un agente nuevo para revisar y encontrar problemas.
+
+> "Use Claude to write code. Run `/clear` or start a second Claude in another terminal. Have the second Claude review the first Claude's work. Start another Claude (or `/clear` again) to read both the code and review feedback. Have this Claude edit the code based on the feedback. This separation often yields better results than having a single Claude handle everything."
+> — [Anthropic](https://www.anthropic.com/engineering/claude-code-best-practices#:~:text=Have%20one%20Claude%20write%20code)
+
+> "Usa Claude para escribir código. Ejecuta `/clear` o inicia un segundo Claude en otra terminal. Haz que el segundo Claude revise el trabajo del primer Claude. Inicia otro Claude (o `/clear` nuevamente) para leer tanto el código como los comentarios de la revisión. Haz que este Claude edite el código basándose en los comentarios. Esta separación a menudo produce mejores resultados que hacer que un solo Claude maneje todo."
+> — Traducido por Claude
+
+### Editar Código en el Diff
+
+Revisa los cambios en la vista de diff y escribe correcciones directamente en el diff antes de confirmar.
+
+> "I manually review all AI-written code and test cases. I'll add test cases for anything I think is missing or needs improvement, either manually or by asking the LLM to write those cases (which I then review)."
+> — [Chris Dzombak](https://www.dzombak.com/blog/2025/08/getting-good-results-from-claude-code/#:~:text=I%20manually%20review%20all)
+
+> "Reviso manualmente todo el código y casos de prueba escritos por IA. Añadiré casos de prueba para cualquier cosa que creo que falta o necesita mejora, ya sea manualmente o pidiendo al LLM que escriba esos casos (que luego reviso)."
+> — Traducido por Claude
+
 ## Técnicas Transversales
 
 ### Ejecutar Múltiples Agentes en Paralelo
@@ -340,6 +380,16 @@ Crea herramientas que respondan rápidamente, proporcionen mensajes de error cla
 > — [Armin Ronacher](https://lucumr.pocoo.org/2025/6/12/agentic-coding/#:~:text=Tools%20need%20to%20be%20fast)
 
 > "Las herramientas necesitan ser rápidas. Mientras más rápido respondan (y menos salida inútil produzcan) mejor. Los crashes son tolerables; los cuelgues son problemáticos. ¡Las herramientas necesitan ser amigables para el usuario! Las herramientas deben informar claramente a los agentes sobre mal uso o errores para asegurar progreso hacia adelante. Las herramientas necesitan estar protegidas contra un mono del caos LLM usándolas completamente mal. ¡No existe tal cosa como error de usuario o comportamiento indefinido!"
+> — Traducido por Claude
+
+### Usar Énfasis Fuerte en Prompts
+
+Usa IMPORTANTE, NUNCA, SIEMPRE liberalmente en prompts para dirigir a la IA lejos de errores comunes - sigue siendo el enfoque más efectivo.
+
+> "Unfortunately CC is no better when it comes to asking the model to not do something. IMPORTANT, VERY IMPORTANT, NEVER and ALWAYS seem to be the best way to steer the model away from landmines. I expect the models to get more steerable in the future and avoid this ugliness. But for now, CC uses this liberally, and so should you."
+> — [Vivek (MinusX AI Team)](https://minusx.ai/blog/decoding-claude-code/#:~:text=Unfortunately%20CC%20is%20no%20better)
+
+> "Desafortunadamente CC no es mejor cuando se trata de pedirle al modelo que no haga algo. IMPORTANTE, MUY IMPORTANTE, NUNCA y SIEMPRE parecen ser la mejor manera de dirigir al modelo lejos de minas terrestres. Espero que los modelos se vuelvan más dirigibles en el futuro y eviten esta fealdad. Pero por ahora, CC usa esto liberalmente, y tú también deberías."
 > — Traducido por Claude
 
 ### Limpiar Contexto Entre Tareas

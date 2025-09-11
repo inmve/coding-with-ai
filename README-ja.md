@@ -1,5 +1,5 @@
-> **アクティブな開発** — 2025年9月5日更新  
-> 最新：「オープンな質問をし、誘導的な質問を避ける」技術を追加  
+> **アクティブな開発** — 2025年9月11日更新  
+> 最新：ai_stackプロジェクトから6つの新しい技術を追加  
 > [すべての更新を見る →](CHANGELOG.md)
 
 **利用可能言語：** [English](README.md) | [Español](README-es.md) | [Deutsch](README-de.md) | [Français](README-fr.md) | [日本語](README-ja.md)
