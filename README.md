@@ -44,13 +44,6 @@ This curated collection fills in those gaps. It's a living document, and you're 
 
 ## Requirements & Planning
 
-### Read, Plan, Code, Commit
-
-Make it explore the code, then make a plan, implement it, and commit.
-
-> "There's a process that I call 'priming' the agent, where instead of having the agent jump straight to performing a task, I have it read additional context upfront to increase the chances that it will produce good outputs."
-> — [Indragie Karunaratne](https://www.indragie.com/blog/i-shipped-a-macos-app-built-entirely-by-claude-code#:~:text=There's%20a%20process%20that%20I%20call)
-
 ### Set Up Memory Files
 
 Create context files that persistently guide tools about your project's structure, standards, and preferences.
@@ -82,6 +75,13 @@ Create `AGENTS.md` for project rules, then use @codebase and @docs for dynamic c
 - Combine static rules (AGENTS.md) with dynamic context (@-mentions) for best results
 
 </details>
+
+### Read, Plan, Code, Commit
+
+Make it explore the code, then make a plan, implement it, and commit.
+
+> "There's a process that I call 'priming' the agent, where instead of having the agent jump straight to performing a task, I have it read additional context upfront to increase the chances that it will produce good outputs."
+> — [Indragie Karunaratne](https://www.indragie.com/blog/i-shipped-a-macos-app-built-entirely-by-claude-code#:~:text=There's%20a%20process%20that%20I%20call)
 
 ### Write Detailed Specs
 
