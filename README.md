@@ -58,6 +58,24 @@ Create context files that persistently guide tools about your project's structur
 > "`CLAUDE.md` is a special file that Claude automatically pulls into context when starting a conversation. This makes it an ideal place for documenting: common bash commands, core files and utility functions, code style guidelines, testing instructions."
 > — [Anthropic](https://www.anthropic.com/engineering/claude-code-best-practices#:~:text=CLAUDE.md%20is%20a%20special%20file)
 
+<details>
+<summary><strong>🛠️ Tool Implementations</strong></summary>
+
+**Claude Code**: Run `/init` to auto-generate smart context files that make Claude understand your codebase instantly. Claude analyzes dependencies, scripts, and architecture automatically. Use `/memory` to edit and add project-specific gotchas.
+
+- For new projects: Run `/init` in your project root to create a starter `CLAUDE.md`
+- For existing codebases: Run `/init` and Claude will analyze your project structure, dependencies, and configuration files to automatically generate essential information
+- Use `/memory` for full editor interface or `#` as quick shortcut to add notes
+- Memory file hierarchy: `~/.claude/CLAUDE.md` (global) and `./CLAUDE.md` (project-specific)
+
+**Cursor**: Create `AGENTS.md` for project rules, then use @codebase and @docs for dynamic context. Cursor's superpower is real-time understanding of your entire codebase through @-mentions.
+
+- Create `AGENTS.md` at project root (also supports legacy `.cursorrules`)
+- Real-time context: Use `@codebase` to pull in relevant files automatically, `@docs` to reference documentation, `@git` to understand recent changes
+- Combine static rules (AGENTS.md) with dynamic context (@-mentions) for best results
+
+</details>
+
 ### Write Detailed Specs
 
 Give comprehensive specs - even a conversational spec beats vague instructions.
@@ -258,6 +276,26 @@ Stop waiting for one AI agent to finish before starting another - run multiple a
 > "I disable all permission checks. Which basically means I run claude --dangerously-skip-permissions. More specifically I have an alias called claude-yolo set up."
 > — [Armin Ronacher](https://lucumr.pocoo.org/2025/6/12/agentic-coding/#:~:text=I%20disable%20all%20permission%20checks)
 
+<details>
+<summary><strong>🛠️ Tool Implementations</strong></summary>
+
+**Claude Code**: Use `--dangerously-skip-permissions` on launch or `/permissions` to change permission strategy during coding session.
+
+- Run `claude --dangerously-skip-permissions` to enable autonomous mode where Claude runs uninterrupted without permission prompts
+- Switch during session: Use `/permissions` to manage tool permissions mid-session without restarting
+- When to use: Fixing lint errors across multiple files, simple refactoring and variable renames, routine code updates and migrations
+- Safety: Best used in containers or VMs for isolation, avoid on critical production systems
+- Setup alias: Many users create `alias cc='claude --dangerously-skip-permissions'` for quick access
+
+**Codex CLI**: Use `--full-auto` on launch or `/mode` to change permission strategy during coding session.
+
+- Enable full autonomous mode with `codex --full-auto` or use in-session `/mode` command
+- Switch during session: Use `/mode` to hot-swap between permission levels without losing session context
+- Permission modes: `--suggest` (requires approval), `--auto-edit` (auto-edits files, asks for commands), `--full-auto` (complete autonomy)
+- When to use full-auto: Systematic refactoring tasks, bulk file operations, lint fixes and code cleanup
+
+</details>
+
 ### Learn From It, Code Yourself
 
 Use assistants to learn new languages and concepts, then apply that knowledge when you code.
@@ -272,6 +310,23 @@ Begin with faster/cheaper models for routine tasks, then escalate to more powerf
 > "Sonnet 4 handles 90% of tasks effectively. Switch to Opus when Sonnet gets stuck. Recommend starting with Sonnet and providing comprehensive context."
 > — [Sankalp](https://sankalp.bearblog.dev/my-claude-code-experience-after-2-weeks-of-usage/#:~:text=Sonnet%204%20handles%2090%25)
 
+<details>
+<summary><strong>🛠️ Tool Implementations</strong></summary>
+
+**Claude Code**: Use `/model` to switch between models based on task complexity. Start with cheaper Sonnet 4 for routine work, escalate to fast Opus 4.1 when stuck.
+
+- Use `/model` to switch models during your session
+- Cheaper, faster option: `Claude Sonnet 4`
+- Top-graded option: `Claude Opus 4.1`
+
+**Codex CLI**: Use `/model` to escalate when needed. Start with `gpt-5-medium` for most tasks, switch to `gpt-5-high` when you hit complex problems.
+
+- Use `/model` to switch models during your session
+- Cheaper, faster option: `gpt-5-medium`
+- Top-graded option: `gpt-5-high`
+
+</details>
+
 ### Build Fast, Foolproof Tools
 
 Create tools that respond quickly, provide clear error messages, and protect against being used incorrectly by AI agents.
@@ -279,19 +334,29 @@ Create tools that respond quickly, provide clear error messages, and protect aga
 > "Tools need to be fast. The quicker they respond (and the less useless output they produce) the better. Crashes are tolerable; hangs are problematic. Tools need to be user friendly! Tools must clearly inform agents of misuse or errors to ensure forward progress. Tools need to be protected against an LLM chaos monkey using them completely wrong. There is no such thing as user error or undefined behavior!"
 > — [Armin Ronacher](https://lucumr.pocoo.org/2025/6/12/agentic-coding/#:~:text=Tools%20need%20to%20be%20fast)
 
-### Start Cheap, Escalate When Stuck
-
-Begin with faster/cheaper models for routine tasks, then escalate to more powerful models only when you hit complex problems.
-
-> "Sonnet 4 handles 90% of tasks effectively. Switch to Opus when Sonnet gets stuck. Recommend starting with Sonnet and providing comprehensive context."
-> — [Sankalp](https://sankalp.bearblog.dev/my-claude-code-experience-after-2-weeks-of-usage/#:~:text=Sonnet%204%20handles%2090%25)
-
 ### Clear Context Between Tasks
 
 Reset the AI's context window between unrelated tasks to prevent confusion and improve performance on new problems.
 
 > "During long sessions, Claude's context window can fill with irrelevant conversation, file contents, and commands. This can reduce performance and sometimes distract Claude. Use the `/clear` command frequently between tasks to reset the context window."
 > — [Anthropic](https://www.anthropic.com/engineering/claude-code-best-practices#:~:text=During%20long%20sessions%2C%20Claude's%20context)
+
+<details>
+<summary><strong>🛠️ Tool Implementations</strong></summary>
+
+**Claude Code**: Use `/clear` command to reset the context window and start fresh.
+
+- Run `/clear` between unrelated tasks to prevent context pollution
+- Preserves your memory files (CLAUDE.md) while clearing conversation history
+- Essential for long coding sessions to maintain performance
+
+**Cursor**: Start new chat sessions or use conversation management features.
+
+- Use Cmd/Ctrl+Shift+L to start a new chat for unrelated tasks
+- Chat history is automatically managed to prevent context overload
+- Use @-mentions to bring in specific context when starting fresh
+
+</details>
 
 ### Use Strong Emphasis in Prompts
 
@@ -306,6 +371,24 @@ Don't let AI go too far down the wrong path - interrupt, provide feedback, and r
 
 > "Press Escape to interrupt Claude during any phase (thinking, tool calls, file edits), preserving context so you can redirect or expand instructions. Double-tap Escape to jump back in history, edit a previous prompt, and explore a different direction. You can edit the prompt and repeat until you get the result you're looking for."
 > — [Anthropic](https://www.anthropic.com/engineering/claude-code-best-practices#:~:text=Press%20Escape%20to%20interrupt%20Claude)
+
+<details>
+<summary><strong>🛠️ Tool Implementations</strong></summary>
+
+**Claude Code**: Use Escape key to interrupt and redirect Claude at any time.
+
+- Press `Escape` to interrupt Claude during any phase (thinking, tool calls, file edits)
+- Double-tap `Escape` to jump back in history and edit a previous prompt
+- Context is preserved so you can redirect or expand instructions
+- Edit the prompt and retry until you get the desired result
+
+**Cursor**: Use Cmd/Ctrl+K to stop generation and provide new instructions.
+
+- Stop generation with `Cmd/Ctrl+K` when you see it going off track
+- Provide corrective feedback immediately rather than waiting
+- Use the chat interface to clarify requirements before letting it continue
+
+</details>
 
 ### Use AI as Coding Partner
 
