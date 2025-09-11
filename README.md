@@ -1,5 +1,5 @@
-> **Active Development** — Updated September 5, 2025  
-> Latest: Added "Ask Open Questions, Not Leading Ones" technique  
+> **Active Development** — Updated September 11, 2025  
+> Latest: Added 6 new techniques from ai_stack project  
 > [See all updates →](CHANGELOG.md)
 
 **Available Languages:** [English](README.md) | [Español](README-es.md) | [Deutsch](README-de.md) | [Français](README-fr.md) | [日本語](README-ja.md)

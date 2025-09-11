@@ -1,5 +1,5 @@
-> **Aktive Entwicklung** — Aktualisiert am 5. September 2025  
-> Neueste: Technik "Offene Fragen stellen, keine suggestiven" hinzugefügt  
+> **Aktive Entwicklung** — Aktualisiert am 11. September 2025  
+> Neueste: 6 neue Techniken aus dem ai_stack-Projekt hinzugefügt  
 > [Alle Updates ansehen →](CHANGELOG.md)
 
 **Verfügbare Sprachen:** [English](README.md) | [Español](README-es.md) | [Deutsch](README-de.md) | [Français](README-fr.md) | [日本語](README-ja.md)

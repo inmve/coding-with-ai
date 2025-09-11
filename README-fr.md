@@ -1,5 +1,5 @@
-> **Développement Actif** — Mis à jour le 5 septembre 2025  
-> Dernière : Ajout de la technique "Posez des Questions Ouvertes, Pas Suggestives"  
+> **Développement Actif** — Mis à jour le 11 septembre 2025  
+> Dernière : Ajout de 6 nouvelles techniques du projet ai_stack  
 > [Voir toutes les mises à jour →](CHANGELOG.md)
 
 **Langues disponibles :** [English](README.md) | [Español](README-es.md) | [Deutsch](README-de.md) | [Français](README-fr.md) | [日本語](README-ja.md)
