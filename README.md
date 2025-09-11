@@ -1,5 +1,5 @@
 > **Active Development** — Updated September 11, 2025  
-> Latest: Added 6 new techniques from ai_stack project  
+> Latest: Added 6 new techniques
 > [See all updates →](CHANGELOG.md)
 > 
 > **Note:** For the best experience, visit the [website](https://coding-with-ai.dev) where you can see the popularity of each technique based on community engagement and discover which approaches developers find most valuable.
