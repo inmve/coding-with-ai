@@ -169,6 +169,13 @@ Delegate boring, systematic, and time-consuming tasks to AI - from small variabl
 > "The best example I've found for the agent was migrating a huge app from one UI library to another. It's not hard work, but it takes a huge amount of time and is completely uninteresting."
 > — [Between the Prompts](https://betweentheprompts.com/design-partner/#:~:text=The%20best%20example%20I%27ve%20found%20for%20the%20agent%20was%20migrating%20a%20huge%20app%20from%20one%20UI%20library%20to%20another.%20It%27s%20not%20hard%20work%2C%20but%20it%20takes%20a%20huge%20amount%20of%20time%20and%20is%20completely%20uninteresting.)
 
+### Provide Context for New Libraries
+
+When using libraries outside the AI's training data, feed it recent examples and documentation to teach it how the library works.
+
+> "LLMs can still help you work with libraries that exist outside their training data, but you need to put in more work—you'll need to feed them recent examples of how those libraries should be used as part of your prompt."
+> — [Simon Willison](https://simonwillison.net/2025/Mar/11/using-llms-for-code/#:~:text=LLMs%20can%20still%20help%20you%20work%20with%20libraries)
+
 ### Treat AI as a Digital Intern
 
 Give AI extremely precise, detailed instructions like you would to an intern - provide exact function signatures and let it handle implementation.
@@ -218,6 +225,27 @@ Have AI write comprehensive tests based on expected behavior, then iterate on im
 > "Ask Claude to write tests based on expected input/output pairs. Be explicit about the fact that you're doing test-driven development so that it avoids creating mock implementations, even for functionality that doesn't exist yet in the codebase. Tell Claude to run the tests and confirm they fail. Ask Claude to commit the tests when you're satisfied with them. Ask Claude to write code that passes the tests, instructing it not to modify the tests."
 > — [Anthropic](https://www.anthropic.com/engineering/claude-code-best-practices#:~:text=Ask%20Claude%20to%20write%20tests)
 
+### Ask the Agent to Review Its Own Code
+
+Have the AI perform a code review on its own work before human review to surface issues and improvements.
+
+> "Asking the agent to perform a code review on its own work is surprisingly fruitful."
+> — [Chris Dzombak](https://www.dzombak.com/blog/2025/08/getting-good-results-from-claude-code/#:~:text=Asking%20the%20agent%20to%20perform%20a%20code%20review)
+
+### One Writes, Another Reviews
+
+Have one agent write code, then use a fresh agent to review and find problems.
+
+> "Use Claude to write code. Run `/clear` or start a second Claude in another terminal. Have the second Claude review the first Claude's work. Start another Claude (or `/clear` again) to read both the code and review feedback. Have this Claude edit the code based on the feedback. This separation often yields better results than having a single Claude handle everything."
+> — [Anthropic](https://www.anthropic.com/engineering/claude-code-best-practices#:~:text=Have%20one%20Claude%20write%20code)
+
+### Edit Code in the Diff
+
+Review changes in diff view and type corrections directly into the diff before committing.
+
+> "I manually review all AI-written code and test cases. I'll add test cases for anything I think is missing or needs improvement, either manually or by asking the LLM to write those cases (which I then review)."
+> — [Chris Dzombak](https://www.dzombak.com/blog/2025/08/getting-good-results-from-claude-code/#:~:text=I%20manually%20review%20all)
+
 ## Cross-Stage Techniques
 
 ### Run Multiple Agents in Parallel
@@ -251,12 +279,26 @@ Create tools that respond quickly, provide clear error messages, and protect aga
 > "Tools need to be fast. The quicker they respond (and the less useless output they produce) the better. Crashes are tolerable; hangs are problematic. Tools need to be user friendly! Tools must clearly inform agents of misuse or errors to ensure forward progress. Tools need to be protected against an LLM chaos monkey using them completely wrong. There is no such thing as user error or undefined behavior!"
 > — [Armin Ronacher](https://lucumr.pocoo.org/2025/6/12/agentic-coding/#:~:text=Tools%20need%20to%20be%20fast)
 
+### Start Cheap, Escalate When Stuck
+
+Begin with faster/cheaper models for routine tasks, then escalate to more powerful models only when you hit complex problems.
+
+> "Sonnet 4 handles 90% of tasks effectively. Switch to Opus when Sonnet gets stuck. Recommend starting with Sonnet and providing comprehensive context."
+> — [Sankalp](https://sankalp.bearblog.dev/my-claude-code-experience-after-2-weeks-of-usage/#:~:text=Sonnet%204%20handles%2090%25)
+
 ### Clear Context Between Tasks
 
 Reset the AI's context window between unrelated tasks to prevent confusion and improve performance on new problems.
 
 > "During long sessions, Claude's context window can fill with irrelevant conversation, file contents, and commands. This can reduce performance and sometimes distract Claude. Use the `/clear` command frequently between tasks to reset the context window."
 > — [Anthropic](https://www.anthropic.com/engineering/claude-code-best-practices#:~:text=During%20long%20sessions%2C%20Claude's%20context)
+
+### Use Strong Emphasis in Prompts
+
+Use IMPORTANT, NEVER, ALWAYS liberally in prompts to steer AI away from common mistakes - it's still the most effective approach.
+
+> "Unfortunately CC is no better when it comes to asking the model to not do something. IMPORTANT, VERY IMPORTANT, NEVER and ALWAYS seem to be the best way to steer the model away from landmines. I expect the models to get more steerable in the future and avoid this ugliness. But for now, CC uses this liberally, and so should you."
+> — [Vivek (MinusX AI Team)](https://minusx.ai/blog/decoding-claude-code/#:~:text=Unfortunately%20CC%20is%20no%20better)
 
 ### Interrupt and Redirect Often
 
