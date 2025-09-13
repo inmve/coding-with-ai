@@ -1,7 +1,10 @@
 # Contributing to Coding with AI
 
-Thank you for your interest in contributing! This project thrives on real developer experiences with AI coding tools.
+Thanks for considering a contribution. This project collects practical, real‑world workflows with LLMs and coding assistants.
 
+  - Repo issues: https://github.com/inmve/ai-patterns/issues
+  - Email (for quick notes): hi@coding-with-ai.dev
+    
 ## How to Contribute
 
 ### Share Your Experience
@@ -60,6 +63,4 @@ We're looking for techniques that meet these criteria:
 
 ## Questions?
 
-Not sure if your contribution fits? Just submit it! We'd rather see more ideas than miss good ones. The community will help refine and improve submissions.
-
-Thank you for helping make AI coding more effective for everyone! 🚀
+Not sure if it fits? Submit it anyway with concrete examples; we’ll help refine. For quick coordination, open a GitHub issue or email hi@coding-with-ai.dev.
