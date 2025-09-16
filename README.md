@@ -1,4 +1,4 @@
-> **Active Development** — Updated September 11, 2025  
+> **Active Development** — Updated September 16, 2025  
 > Latest: Added 6 new techniques
 > [See all updates →](CHANGELOG.md)
 > 
