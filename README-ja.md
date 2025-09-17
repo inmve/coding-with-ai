@@ -1,5 +1,5 @@
-> **アクティブな開発** — 2025年9月11日更新  
-> 最新：ai_stackプロジェクトから6つの新しい技術を追加  
+> **アクティブな開発** — 2025年9月16日更新  
+> 最新：新しいプランニングとモデル選択技術を追加  
 > [すべての更新を見る →](CHANGELOG.md)
 
 **利用可能言語：** [English](README.md) | [Español](README-es.md) | [Deutsch](README-de.md) | [Français](README-fr.md) | [日本語](README-ja.md)
@@ -106,15 +106,58 @@
 > "私はLLMから十分な価値を得ているため、ライブラリを選ぶときに意図的にこれを考慮するようになりました—良い安定性を持ち、多くの例がトレーニングデータに含まれるほど人気のあるライブラリに固執しようとします。私は退屈な技術の原則を適用することを好みます—あなたのプロジェクトのユニークなセールスポイントで革新し、他のすべてには試行錯誤された解決策に固執する。"
 > — Claudeによる翻訳
 
-### まず考えるように求める
+### 計画を最初に求める
 
-コーディング前により慎重な計画を引き出すために`think`または`think hard`を使用します。
+アシスタントにコードに触る前にステップ、リスク、および迅速テストを概説してもらい、アプローチをレビューして調整できるようにします。
 
-> "Claude tends to jump straight into implementation without sufficient background, which generates poor quality results. Another tactic for priming the agent is asking Claude to use its extended thinking mode and make a plan first. The extended thinking is activated by this set of magic keywords: `think` < `think hard` < `think harder` < `ultrathink.` These are not just suggestions to the model—they are specific phrases that activate various levels of extended thinking."
-> — [Indragie Karunaratne](https://www.indragie.com/blog/i-shipped-a-macos-app-built-entirely-by-claude-code#:~:text=Claude%20tends%20to%20jump%20straight)
+> "If you want to iterate on the plan, it helps to explicitly include instructions in the prompt to not proceed with implementation until the plan has been accepted by the user."
+> — [Indragie Karunaratne](https://www.indragie.com/blog/i-shipped-a-macos-app-built-entirely-by-claude-code#:~:text=If%20you%20want%20to%20iterate%20on%20the%20plan)
 
-> "Claudeは十分な背景なしに直接実装に飛び込む傾向があり、これは低品質の結果を生成します。エージェントをプライミングするもう一つの戦術は、Claudeに拡張思考モードを使用し、最初に計画を立てるように求めることです。拡張思考は、この魔法のキーワードセットによって活性化されます：`think` < `think hard` < `think harder` < `ultrathink`。これらはモデルへの単なる提案ではありません—これらは様々なレベルの拡張思考を活性化する特定のフレーズです。"
+> "計画を反復したい場合、ユーザーによって計画が受け入れられるまで実装を進めないようにプロンプトに明示的に指示を含めることが役立ちます。"
 > — Claudeによる翻訳
+
+**ツール実装:**
+
+<details>
+<summary><strong>Claude Code</strong></summary>
+
+`Shift+Tab`を押してプランモードに入り、読み取りと下書きのみを行うようにします。共有計画プロンプトを使用し、良さそうに見えるまで反復し、実装に青信号を出すときにプランモードを終了します。
+
+</details>
+
+<details>
+<summary><strong>Cursor</strong></summary>
+
+Cursorのプラントグルをクリックして、反復中は読み取り専用のままにします。ステップ、影響を受けるファイル、リスク、迅速テストをリストさせ、実装に青信号を出したらプランモードを終了してdiffを開きます。
+
+</details>
+
+<details>
+<summary><strong>Codex CLI</strong></summary>
+
+Codexに計画を実装から分離しておくように思い出させます：ステップ、リスク、迅速テストをリストし、レビューのために一時停止し、承認後に実装とdiff検査を行うようにします。
+
+</details>
+
+### 高容量モードで計画する
+
+要件を収集したり仕様書を作成する際、一時的により高機能のモデルや拡張推論モードに切り替えて、コーディング前に読み取り、統合、計画提案をさせます。
+
+**ツール実装:**
+
+<details>
+<summary><strong>Claude Code</strong></summary>
+
+要件を定義する際に`/model`を実行して`opus`（または他の高ティア）を選択して深く推論できるようにし、編集を承認するまで読み取り専用にしたい場合はプランモードを使用します。
+
+</details>
+
+<details>
+<summary><strong>Codex CLI</strong></summary>
+
+`/model gpt-5-high`（または他の拡張推論ティア）を使用してアシスタントにコンテキストを消化して仕様書を作成させ、計画が確定したらレベルを下げます。
+
+</details>
 
 ## UIとプロトタイピング
 
@@ -164,7 +207,21 @@ UIを`もっと美しく`または`もっとエレガント`にするように�
 > "Claudeが最初に適切に設計されたUIを生成しない場合、単純に`より美しく/エレガント/使いやすくする`ように指示することができます。"
 > — Claudeによる翻訳
 
+### ASCIIワイヤーフレームを求める
+
+レイアウトを洗練する際、アシスタントにASCIIワイヤーフレームをスケッチさせ、CSSに触る前に階層と間隔を評価できるようにします。
+
+> "If Claude doesn't produce a well-designed UI the first time, you can just tell it to `make it more beautiful/elegant/usable`."
+> — [Indragie Karunaratne](https://www.indragie.com/blog/i-shipped-a-macos-app-built-entirely-by-claude-code#:~:text=If%20Claude%20doesn't%20produce)
+
+> "Claudeが最初に適切に設計されたUIを生成しない場合、単純に`より美しく/エレガント/使いやすくする`ように指示することができます。"
+> — Claudeによる翻訳
+
 ## コーディング
+
+### コーディング前に理解を確認する
+
+実装を開始する前にツールにタスクの理解を明示的に確認するよう求め、整合を確保し、一致しない期待を減らします。
 
 ### 依存関係ではなくコードを生成する
 
@@ -296,6 +353,26 @@ AIエージェントがログを読んで何が起こっているかを理解し
 
 ## 横断的技術
 
+### 仕事に適したモデルを選択する
+
+新しいタスクを開始する前に、2つのレバーを選択します：適切なモデル（モダリティ、コンテキスト長、ツール呼び出しの信頼性、レイテンシ、コスト）と適切な推論レベル（より多く/少なくの思考トークンを割り当てる）—デフォルトを盲目的に使用しないでください。
+
+**ツール実装:**
+
+<details>
+<summary><strong>Claude Code</strong></summary>
+
+タスク開始時の2つのレバー：(1) `/model`ビアモデル（ルーチン編集用には高速/安価；マルチファイル/長文書用には長コンテキスト；UI/スクリーンショット用にはビジョン強力）。(2) 推論レベル：複雑なデバッグ、アーキテクチャ、曖昧な仕様書に取り組む際に拡張思考を有効にして、より多くの推論トークンを割り当てます。
+
+</details>
+
+<details>
+<summary><strong>Codex CLI</strong></summary>
+
+迅速編集には`gpt-5-minimal`/`gpt-5-low`から始め；複雑さが高まるとより高い推論バリアント`gpt-5-high`/`gpt-5-medium`を選択します。
+
+</details>
+
 ### 複数のエージェントを並行して実行
 
 一つのAIエージェントが終了するのを待つのをやめましょう - 競合や混乱なしに、個別の機能で複数のエージェントを並行して実行します。
@@ -371,3 +448,30 @@ AIが間違った道を進みすぎないようにしましょう - 問題に気
 
 > "Claude Codeは、数年の経験を持ち、時々の促しが必要な人とのペアプログラミングのような感覚です。そして、ペアプログラミングと同様に、レビュー、リファクタリング、テストの時間です。なぜなら、gitコミットにはまだあなたの名前があるからです。"
 > — Claudeによる翻訳
+
+### プログラミング中にロールバックポイントを作成する
+
+実験が失敗したときに戻れるチェックポイントを作成します—リスクの高い変更の前に知られた良好な作業状態をキャプチャします。
+
+**ツール実装:**
+
+<details>
+<summary><strong>Claude Code</strong></summary>
+
+`git commit`を頻繁に使用してロールバックポイントを作成します。リスクの高い変更の前に動作するコードをコミットして、`git reset`やブランチ切り替えで元に戻れるようにします。
+
+</details>
+
+<details>
+<summary><strong>Cursor</strong></summary>
+
+CursorのAIエディトチェックポイント(Cmd/Ctrl+Z)を使用して迅速な元に戻す操作を行い；永続的なロールバックポイントのためにgitコミットを作成します。
+
+</details>
+
+<details>
+<summary><strong>Codex CLI</strong></summary>
+
+Codexに大きなパッチを適用させる前に作業状態をチェックポイントとしてコミットし；結果が良くない場合はgitで元に戻します。
+
+</details>
