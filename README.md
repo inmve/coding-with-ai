@@ -114,12 +114,55 @@ Deliberately pick well-established libraries with good stability that existed be
 > "I gain enough value from LLMs that I now deliberately consider this when picking a library—I try to stick with libraries with good stability and that are popular enough that many examples of them will have made it into the training data. I like applying the principles of boring technology—innovate on your project's unique selling points, stick with tried and tested solutions for everything else."
 > — [Simon Willison](https://simonwillison.net/2025/Mar/11/using-llms-for-code/#:~:text=I%20gain%20enough%20value%20from%20LLMs)
 
-### Ask to Think First
+### Ask to Plan First
 
-Use `think` or `think hard` to trigger more careful planning before coding.
+Tell the assistant to outline steps, risks, and quick tests before touching code so you can review and adjust the approach.
 
-> "Claude tends to jump straight into implementation without sufficient background, which generates poor quality results. Another tactic for priming the agent is asking Claude to use its extended thinking mode and make a plan first. The extended thinking is activated by this set of magic keywords: `think` < `think hard` < `think harder` < `ultrathink.` These are not just suggestions to the model—they are specific phrases that activate various levels of extended thinking."
-> — [Indragie Karunaratne](https://www.indragie.com/blog/i-shipped-a-macos-app-built-entirely-by-claude-code#:~:text=Claude%20tends%20to%20jump%20straight)
+> "If you want to iterate on the plan, it helps to explicitly include instructions in the prompt to not proceed with implementation until the plan has been accepted by the user."
+> — [Indragie Karunaratne](https://www.indragie.com/blog/i-shipped-a-macos-app-built-entirely-by-claude-code#:~:text=If%20you%20want%20to%20iterate%20on%20the%20plan)
+
+**Tool Implementations:**
+
+<details>
+<summary><strong>Claude Code</strong></summary>
+
+Hit `Shift+Tab` to drop into Plan Mode so it only reads and drafts. Use the shared planning prompt, iterate until it looks right, then exit Plan Mode when you green-light implementation.
+
+</details>
+
+<details>
+<summary><strong>Cursor</strong></summary>
+
+Click the Plan toggle in Cursor so it stays read-only while you iterate. Have it list steps, impacted files, risks, and quick tests, then exit Plan Mode to open the diff once you green-light implementation.
+
+</details>
+
+<details>
+<summary><strong>Codex CLI</strong></summary>
+
+Remind Codex to keep planning separate from implementation: list steps, risks, and quick tests, pause for your review, then let it implement and inspect the diff once approved.
+
+</details>
+
+### Plan with High-Capacity Mode
+
+When gathering requirements or drafting specs, temporarily switch to a higher-capability model or extended reasoning mode so it can read, synthesize, and propose a plan before coding.
+
+**Tool Implementations:**
+
+<details>
+<summary><strong>Claude Code</strong></summary>
+
+Run `/model` and pick `opus` (or another higher tier) when scoping requirements so it can reason deeply, then use Plan Mode if you want it to stay read-only until you approve edits.
+
+</details>
+
+<details>
+<summary><strong>Codex CLI</strong></summary>
+
+Use `/model gpt-5-high` (or another extended-reasoning tier) to have the assistant digest context and draft the spec, then step back down once the plan is locked.
+
+</details>
 
 ## UI & Prototyping
 
@@ -154,7 +197,15 @@ Just ask to make the UI `more beautiful` or `more elegant` - it works.
 > "If Claude doesn't produce a well-designed UI the first time, you can just tell it to `make it more beautiful/elegant/usable`."
 > — [Indragie Karunaratne](https://www.indragie.com/blog/i-shipped-a-macos-app-built-entirely-by-claude-code#:~:text=If%20Claude%20doesn't%20produce)
 
+### Ask for ASCII Wireframes
+
+When refining layouts, have the assistant sketch ASCII wireframes so you can evaluate hierarchy and spacing before touching CSS.
+
 ## Coding
+
+### Confirm Understanding Before Coding
+
+Explicitly ask the tool to confirm its understanding of the task before starting implementation to ensure alignment and reduce mismatched expectations.
 
 ### Generate Code, Not Dependencies
 
@@ -271,6 +322,26 @@ Review changes in diff view and type corrections directly into the diff before c
 > — [Chris Dzombak](https://www.dzombak.com/blog/2025/08/getting-good-results-from-claude-code/#:~:text=I%20manually%20review%20all)
 
 ## Cross-Stage Techniques
+
+### Choose the Right Model for the Job
+
+Before starting a new task, choose two levers: the right model (modality, context length, tool-calling reliability, latency, cost) and the right reasoning level (allocate more/less thinking tokens) — don't default blindly.
+
+**Tool Implementations:**
+
+<details>
+<summary><strong>Claude Code</strong></summary>
+
+Two levers at task start: (1) Model via `/model` (fast/cheap for routine edits; long‑context for multi‑file/long docs; vision‑strong for UI/screenshots). (2) Reasoning level: enable extended thinking when tackling complex debugging, architecture, or ambiguous specs to allocate more reasoning tokens.
+
+</details>
+
+<details>
+<summary><strong>Codex CLI</strong></summary>
+
+Start with `gpt-5-minimal`/`gpt-5-low` for quick edits; choose a higher‑reasoning variant `gpt-5-high`/`gpt-5-medium` when complexity rises.
+
+</details>
 
 ### Run Multiple Agents in Parallel
 
@@ -430,3 +501,30 @@ Collaborate like with a coding partner - explain problems, get feedback, and wor
 
 > "Claude Code feels like pairing with someone with a few years under their belt who just needs the occasional nudge. Then like with pairing, it's review, refactor and test time because it's still your name on the git commit."
 > — [Orta Therox](https://blog.puzzmo.com/posts/2025/06/07/orta-on-claude/#:~:text=Claude%20Code%20feels%20like%20pairing)
+
+### Create Rollback Points While Coding
+
+Create checkpoints you can revert to when experiments fail—capture known‑good working states before risky changes.
+
+**Tool Implementations:**
+
+<details>
+<summary><strong>Claude Code</strong></summary>
+
+Use `git commit` frequently to create rollback points. Commit working code before risky changes so you can revert with `git reset` or branch switches.
+
+</details>
+
+<details>
+<summary><strong>Cursor</strong></summary>
+
+Rely on Cursor's AI edit checkpoints (Cmd/Ctrl+Z) for quick undo; still create git commits for durable rollback points.
+
+</details>
+
+<details>
+<summary><strong>Codex CLI</strong></summary>
+
+Commit working states as checkpoints before letting Codex apply large patches; revert with git if outcomes aren't good.
+
+</details>
