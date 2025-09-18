@@ -1,5 +1,5 @@
-> **Aktive Entwicklung** — Aktualisiert am 11. September 2025  
-> Neueste: 6 neue Techniken aus dem ai_stack-Projekt hinzugefügt  
+> **Aktive Entwicklung** — Aktualisiert am 16. September 2025  
+> Neueste: Neue Planungs- und Modellauswahl-Techniken hinzugefügt  
 > [Alle Updates ansehen →](CHANGELOG.md)
 
 **Verfügbare Sprachen:** [English](README.md) | [Español](README-es.md) | [Deutsch](README-de.md) | [Français](README-fr.md) | [日本語](README-ja.md)
@@ -106,15 +106,58 @@ Wählen Sie bewusst etablierte Bibliotheken mit guter Stabilität, die vor AI-Tr
 > "Ich gewinne genug Wert aus LLMs, dass ich das jetzt bewusst bei der Auswahl einer Bibliothek berücksichtige—ich versuche bei Bibliotheken mit guter Stabilität zu bleiben, die populär genug sind, dass viele Beispiele davon in die Trainingsdaten gelangt sind. Ich wende gerne die Prinzipien langweiliger Technologie an—innoviere bei den einzigartigen Verkaufsargumenten deines Projekts, bleibe bei bewährten Lösungen für alles andere."
 > — Übersetzt von Claude
 
-### Bitten, zuerst zu denken
+### Um Planung zuerst bitten
 
-Verwenden Sie `think` oder `think hard`, um sorgfältigere Planung vor dem Programmieren auszulösen.
+Sagen Sie dem Assistenten, er soll Schritte, Risiken und schnelle Tests skizzieren, bevor er Code berührt, damit Sie den Ansatz überprüfen und anpassen können.
 
-> "Claude tends to jump straight into implementation without sufficient background, which generates poor quality results. Another tactic for priming the agent is asking Claude to use its extended thinking mode and make a plan first. The extended thinking is activated by this set of magic keywords: `think` < `think hard` < `think harder` < `ultrathink.` These are not just suggestions to the model—they are specific phrases that activate various levels of extended thinking."
-> — [Indragie Karunaratne](https://www.indragie.com/blog/i-shipped-a-macos-app-built-entirely-by-claude-code#:~:text=Claude%20tends%20to%20jump%20straight)
+> "If you want to iterate on the plan, it helps to explicitly include instructions in the prompt to not proceed with implementation until the plan has been accepted by the user."
+> — [Indragie Karunaratne](https://www.indragie.com/blog/i-shipped-a-macos-app-built-entirely-by-claude-code#:~:text=If%20you%20want%20to%20iterate%20on%20the%20plan)
 
-> "Claude neigt dazu, direkt zur Implementierung zu springen ohne ausreichenden Hintergrund, was schlechte Qualitätsergebnisse erzeugt. Eine weitere Taktik für die Vorbereitung des Agenten ist, Claude zu bitten, seinen erweiterten Denkmodus zu verwenden und zuerst einen Plan zu erstellen. Das erweiterte Denken wird durch diese Sammlung von magischen Schlüsselwörtern aktiviert: `think` < `think hard` < `think harder` < `ultrathink.` Das sind nicht nur Vorschläge an das Modell—es sind spezifische Phrasen, die verschiedene Ebenen des erweiterten Denkens aktivieren."
+> "Wenn Sie über den Plan iterieren möchten, hilft es, explizit Anweisungen in den Prompt zu incluieren, nicht mit der Implementierung fortzufahren, bis der Plan vom Benutzer akzeptiert wurde."
 > — Übersetzt von Claude
+
+**Tool-Implementierungen:**
+
+<details>
+<summary><strong>Claude Code</strong></summary>
+
+Drücken Sie `Shift+Tab`, um in den Planmodus zu gelangen, sodass es nur liest und entwirft. Verwenden Sie den gemeinsamen Planungsprompt, iterieren Sie, bis es richtig aussieht, dann verlassen Sie den Planmodus, wenn Sie die Implementierung freigeben.
+
+</details>
+
+<details>
+<summary><strong>Cursor</strong></summary>
+
+Klicken Sie auf den Plan-Schalter in Cursor, damit es schreibgeschützt bleibt, während Sie iterieren. Lassen Sie es Schritte, betroffene Dateien, Risiken und schnelle Tests auflisten, dann verlassen Sie den Planmodus, um das Diff zu öffnen, sobald Sie die Implementierung freigeben.
+
+</details>
+
+<details>
+<summary><strong>Codex CLI</strong></summary>
+
+Erinnern Sie Codex daran, Planung von Implementierung getrennt zu halten: Schritte, Risiken und schnelle Tests auflisten, für Ihre Überprüfung pausieren, dann lassen Sie es implementieren und das Diff inspizieren, sobald es genehmigt ist.
+
+</details>
+
+### Mit hochkapazitärem Modus planen
+
+Beim Sammeln von Anforderungen oder Entwerfen von Spezifikationen wechseln Sie vorübergehend zu einem leistungsfähigeren Modell oder erweiterten Denkermodus, damit es lesen, synthetisieren und einen Plan vorschlagen kann, bevor es codiert.
+
+**Tool-Implementierungen:**
+
+<details>
+<summary><strong>Claude Code</strong></summary>
+
+Führen Sie `/model` aus und wählen Sie `opus` (oder einen anderen höheren Tier), wenn Sie Anforderungen definieren, damit es tief denken kann, dann verwenden Sie den Planmodus, wenn Sie möchten, dass es schreibgeschützt bleibt, bis Sie Änderungen genehmigen.
+
+</details>
+
+<details>
+<summary><strong>Codex CLI</strong></summary>
+
+Verwenden Sie `/model gpt-5-high` (oder einen anderen erweiterten Denkertier), um den Assistenten Kontext verdauen und die Spezifikation entwerfen zu lassen, dann steigen Sie wieder herunter, sobald der Plan feststeht.
+
+</details>
 
 ## UI & Prototyping
 
@@ -164,7 +207,15 @@ Bitten Sie einfach darum, die UI `schöner` oder `eleganter` zu machen - es funk
 > "Wenn Claude beim ersten Mal keine gut gestaltete UI produziert, können Sie es einfach bitten, sie `schöner/eleganter/benutzbarer zu machen`."
 > — Übersetzt von Claude
 
+### Um ASCII-Wireframes bitten
+
+Beim Verfeinern von Layouts lassen Sie den Assistenten ASCII-Wireframes skizzieren, damit Sie Hierarchie und Abstände bewerten können, bevor Sie CSS berühren.
+
 ## Programmierung
+
+### Verständnis vor dem Programmieren bestätigen
+
+Bitten Sie das Tool explizit, sein Verständnis der Aufgabe zu bestätigen, bevor Sie mit der Implementierung beginnen, um Abstimmung sicherzustellen und nicht übereinstimmende Erwartungen zu reduzieren.
 
 ### Code generieren, nicht Abhängigkeiten
 
@@ -296,6 +347,26 @@ Lassen Sie die KI umfassende Tests basierend auf erwartetem Verhalten schreiben,
 
 ## Übergreifende Techniken
 
+### Das richtige Modell für die Aufgabe wählen
+
+Bevor Sie eine neue Aufgabe beginnen, wählen Sie zwei Hebel: das richtige Modell (Modalität, Kontextlänge, Tool-Calling-Zuverlässigkeit, Latenz, Kosten) und das richtige Reasoning-Level (mehr/weniger Denkzeit zuweisen) — nutzen Sie nicht blind die Standardeinstellungen.
+
+**Tool-Implementierungen:**
+
+<details>
+<summary><strong>Claude Code</strong></summary>
+
+Zwei Hebel bei Aufgabenbeginn: (1) Modell über `/model` (schnell/günstig für Routineänderungen; langer Kontext für Multi-Dateien/lange Dokumente; vision-stark für UI/Screenshots). (2) Reasoning-Level: erweiterten Denkmodus aktivieren bei komplexem Debugging, Architektur oder mehrdeutigen Spezifikationen, um mehr Reasoning-Tokens zuzuweisen.
+
+</details>
+
+<details>
+<summary><strong>Codex CLI</strong></summary>
+
+Beginnen Sie mit `gpt-5-minimal`/`gpt-5-low` für schnelle Änderungen; wählen Sie eine höhere Reasoning-Variante `gpt-5-high`/`gpt-5-medium`, wenn die Komplexität steigt.
+
+</details>
+
 ### Mehrere Agenten parallel ausführen
 
 Hören Sie auf, darauf zu warten, dass ein KI-Agent fertig ist, bevor Sie einen anderen starten - führen Sie mehrere Agenten parallel an separaten Features aus, ohne Konflikte oder Verwirrung.
@@ -371,3 +442,30 @@ Arbeiten Sie wie mit einem Programmierpartner zusammen - erklären Sie Probleme,
 
 > "Claude Code fühlt sich an wie Pair Programming mit jemandem mit ein paar Jahren Erfahrung, der nur gelegentlich einen Schubs braucht. Dann wie beim Pairing ist es Zeit für Review, Refactoring und Tests, weil es immer noch Ihr Name auf dem Git-Commit ist."
 > — Übersetzt von Claude
+
+### Rollback-Punkte beim Programmieren erstellen
+
+Erstellen Sie Checkpoints, zu denen Sie zurückkehren können, wenn Experimente fehlschlagen—erfassen Sie bekannt-gute Arbeitszustände vor riskanten Änderungen.
+
+**Tool-Implementierungen:**
+
+<details>
+<summary><strong>Claude Code</strong></summary>
+
+Verwenden Sie `git commit` häufig, um Rollback-Punkte zu erstellen. Committen Sie funktionierenden Code vor riskanten Änderungen, damit Sie mit `git reset` oder Branch-Wechseln zurückkehren können.
+
+</details>
+
+<details>
+<summary><strong>Cursor</strong></summary>
+
+Verlassen Sie sich auf Cursors AI-Edit-Checkpoints (Cmd/Ctrl+Z) für schnelles Rückgängigmachen; erstellen Sie trotzdem Git-Commits für dauerhafte Rollback-Punkte.
+
+</details>
+
+<details>
+<summary><strong>Codex CLI</strong></summary>
+
+Commitken Sie Arbeitszustände als Checkpoints, bevor Sie Codex große Patches anwenden lassen; kehren Sie mit Git zurück, wenn die Ergebnisse nicht gut sind.
+
+</details>
