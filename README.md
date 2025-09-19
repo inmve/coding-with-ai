@@ -1,4 +1,4 @@
-> **Active Development** — Updated September 16, 2025
+> **Active Development** — Updated September 19, 2025
 > [See all updates →](CHANGELOG.md)
 > 
 > **Note:** For the best experience, visit the [website](https://coding-with-ai.dev) where you can see the popularity of each technique based on community engagement and discover which approaches developers find most valuable.

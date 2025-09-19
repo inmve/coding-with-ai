@@ -1,4 +1,4 @@
-> **Desarrollo Activo** — Actualizado 16 de septiembre de 2025  
+> **Desarrollo Activo** — Actualizado 19 de septiembre de 2025  
 > Último: Añadidas nuevas técnicas de planificación y selección de modelos  
 > [Ver todas las actualizaciones →](CHANGELOG.md)
 

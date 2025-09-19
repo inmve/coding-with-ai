@@ -1,4 +1,4 @@
-> **Aktive Entwicklung** — Aktualisiert am 16. September 2025  
+> **Aktive Entwicklung** — Aktualisiert am 19. September 2025  
 > Neueste: Neue Planungs- und Modellauswahl-Techniken hinzugefügt  
 > [Alle Updates ansehen →](CHANGELOG.md)
 
