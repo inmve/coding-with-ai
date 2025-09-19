@@ -293,6 +293,13 @@ Design systems with comprehensive logging so AI agents can read logs to understa
 
 ## Testing & QA
 
+### Always Test Code Yourself
+
+You absolutely cannot outsource testing - always verify the code actually works.
+
+> "The one thing you absolutely cannot outsource to the machine is testing that the code actually works. Your responsibility as a software developer is to deliver working systems. If you haven't seen it run, it's not a working system. You need to invest in strengthening those manual QA habits."
+> — [Simon Willison](https://simonwillison.net/2025/Mar/11/using-llms-for-code/#:~:text=The%20one%20thing%20you%20absolutely%20cannot%20outsource)
+
 ### Write Tests First, Then Code
 
 Have AI write comprehensive tests based on expected behavior, then iterate on implementation until all tests pass.
@@ -323,6 +330,13 @@ Review changes in diff view and type corrections directly into the diff before c
 
 ## Cross-Stage Techniques
 
+### Choose Tools by Conversational Style
+
+Pick coding assistants based on whether you prefer human-like collaboration or structured, robot-like efficiency - conversational personality significantly affects productivity and enjoyment.
+
+> "In terms of personality, it's the opposite for me: Claude Code feels like my pair-programming partner, while Codex feels like a robot (very structured but not very human in its conversational style). Problem is after a while, the 'You are absolutely right!' kinda gets on my nerves. Codex is dry. You can insult it and it doesn't even answer. No personality. Claude is like, a friend who admits messing up... Codex is monotone straight to the point, but most importantly the reason why it is better is because it's not agreeable at all. It will challenge you when you're suggesting something wrong and stay with its opinion."
+> — [r/ClaudeAI](https://www.reddit.com/r/ClaudeAI/)
+
 ### Choose the Right Model for the Job
 
 Before starting a new task, choose two levers: the right model (modality, context length, tool-calling reliability, latency, cost) and the right reasoning level (allocate more/less thinking tokens) — don't default blindly.
@@ -340,6 +354,38 @@ Two levers at task start: (1) Model via `/model` (fast/cheap for routine edits; 
 <summary><strong>Codex CLI</strong></summary>
 
 Start with `gpt-5-minimal`/`gpt-5-low` for quick edits; choose a higher‑reasoning variant `gpt-5-high`/`gpt-5-medium` when complexity rises.
+
+</details>
+
+### Centralise Memory Files
+
+Keep one canonical instruction doc and route every other agent file to it with a shouty pointer line, a symlink, or an @file include so cross-tool guidance stays consistent.
+
+**Tool Implementations:**
+
+<details>
+<summary><strong>Claude Code</strong></summary>
+
+Keep `CLAUDE.md` as the source of truth and use one of these three ways.
+
+1. Put `@CLAUDE.md` into `AGENTS.md`.
+
+2. Symlink `AGENTS.md` to `CLAUDE.md` with `ln -sf CLAUDE.md AGENTS.md` so both tools share the same file.
+
+3. Leave `AGENTS.md` as a single line: `READ CLAUDE.md FIRST!!!`.
+
+</details>
+
+<details>
+<summary><strong>Codex CLI</strong></summary>
+
+Use the same trio from the Codex side.
+
+1. If Codex holds the primary text, leave `AGENTS.md` full and place `@AGENTS.md` inside `CLAUDE.md` so both tools land in the same doc.
+
+2. Run `ln -sf CLAUDE.md AGENTS.md` so the file Codex reads is just a symlink to `CLAUDE.md`.
+
+3. When `CLAUDE.md` is canonical, keep `AGENTS.md` to one line: `READ CLAUDE.md FIRST!!!`.
 
 </details>
 
@@ -425,6 +471,14 @@ Create tools that respond quickly, provide clear error messages, and protect aga
 > "Tools need to be fast. The quicker they respond (and the less useless output they produce) the better. Crashes are tolerable; hangs are problematic. Tools need to be user friendly! Tools must clearly inform agents of misuse or errors to ensure forward progress. Tools need to be protected against an LLM chaos monkey using them completely wrong. There is no such thing as user error or undefined behavior!"
 > — [Armin Ronacher](https://lucumr.pocoo.org/2025/6/12/agentic-coding/#:~:text=Tools%20need%20to%20be%20fast)
 
+### A Session Should Have One Goal
+
+Use the prompt `The goal of this session is <specific goal>. Inform me if we drift off track.` either at the start of each session or add it to your memory file (AGENTS.md, CLAUDE.md) to prevent context poisoning and increase agent steerability - applying the Single Responsibility Principle to AI conversations.
+
+### Use Feature Sessions
+
+Isolate each feature or task in separate sessions to reduce context bloat and improve accuracy, just like feature branches in git isolate code changes.
+
 ### Clear Context Between Tasks
 
 Reset the AI's context window between unrelated tasks to prevent confusion and improve performance on new problems.
@@ -495,13 +549,6 @@ Use Cmd/Ctrl+K to stop generation and provide new instructions.
 
 </details>
 
-### Use AI as Coding Partner
-
-Collaborate like with a coding partner - explain problems, get feedback, and work together on solutions.
-
-> "Claude Code feels like pairing with someone with a few years under their belt who just needs the occasional nudge. Then like with pairing, it's review, refactor and test time because it's still your name on the git commit."
-> — [Orta Therox](https://blog.puzzmo.com/posts/2025/06/07/orta-on-claude/#:~:text=Claude%20Code%20feels%20like%20pairing)
-
 ### Create Rollback Points While Coding
 
 Create checkpoints you can revert to when experiments fail—capture known‑good working states before risky changes.
@@ -528,3 +575,10 @@ Rely on Cursor's AI edit checkpoints (Cmd/Ctrl+Z) for quick undo; still create g
 Commit working states as checkpoints before letting Codex apply large patches; revert with git if outcomes aren't good.
 
 </details>
+
+### Use AI as Coding Partner
+
+Collaborate like with a coding partner - explain problems, get feedback, and work together on solutions.
+
+> "Claude Code feels like pairing with someone with a few years under their belt who just needs the occasional nudge. Then like with pairing, it's review, refactor and test time because it's still your name on the git commit."
+> — [Orta Therox](https://blog.puzzmo.com/posts/2025/06/07/orta-on-claude/#:~:text=Claude%20Code%20feels%20like%20pairing)
