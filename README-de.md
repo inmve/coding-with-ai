@@ -1,4 +1,4 @@
-> **Aktive Entwicklung** — Aktualisiert am 16. September 2025  
+> **Aktive Entwicklung** — Aktualisiert am 19. September 2025  
 > Neueste: Neue Planungs- und Modellauswahl-Techniken hinzugefügt  
 > [Alle Updates ansehen →](CHANGELOG.md)
 
@@ -346,6 +346,13 @@ Lassen Sie die KI umfassende Tests basierend auf erwartetem Verhalten schreiben,
 > — Übersetzt von Claude
 
 ## Übergreifende Techniken
+
+### Tools nach Konversationsstil wählen
+
+Wählen Sie Coding-Assistenten basierend darauf, ob Sie menschenähnliche Zusammenarbeit oder strukturierte, roboterhafte Effizienz bevorzugen - die Konversationspersönlichkeit beeinflusst Produktivität und Zufriedenheit erheblich.
+
+> "In Bezug auf die Persönlichkeit ist es für mich das Gegenteil: Claude Code fühlt sich wie mein Pair-Programming-Partner an, während sich Codex wie ein Roboter anfühlt (sehr strukturiert, aber nicht sehr menschlich in seinem Konversationsstil). Das Problem ist, dass mich das 'Du hast absolut recht!' nach einer Weile nervt. Codex ist trocken. Man kann es beleidigen und es antwortet nicht einmal. Keine Persönlichkeit. Claude ist wie ein Freund, der zugibt, Mist gebaut zu haben... Codex ist monoton und direkt, aber am wichtigsten ist, dass es überhaupt nicht gefällig ist. Es wird Sie herausfordern, wenn Sie etwas Falsches vorschlagen und bei seiner Meinung bleiben."
+> — [r/ClaudeAI](https://www.reddit.com/r/ClaudeAI/)
 
 ### Das richtige Modell für die Aufgabe wählen
 

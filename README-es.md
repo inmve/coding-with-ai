@@ -1,4 +1,4 @@
-> **Desarrollo Activo** — Actualizado 16 de septiembre de 2025  
+> **Desarrollo Activo** — Actualizado 19 de septiembre de 2025  
 > Último: Añadidas nuevas técnicas de planificación y selección de modelos  
 > [Ver todas las actualizaciones →](CHANGELOG.md)
 
@@ -351,6 +351,13 @@ Diseña sistemas con registros comprehensivos para que los agentes de IA puedan 
 
 ## Pruebas y Control de Calidad
 
+### Siempre Prueba el Código Tú Mismo
+
+Absolutamente no puedes externalizar las pruebas - siempre verifica que el código realmente funcione.
+
+> "Lo único que absolutamente no puedes externalizar a la máquina es probar que el código realmente funciona. Tu responsabilidad como desarrollador de software es entregar sistemas que funcionen. Si no lo has visto ejecutarse, no es un sistema que funciona. Necesitas invertir en fortalecer esos hábitos de QA manual."
+> — [Simon Willison](https://simonwillison.net/2025/Mar/11/using-llms-for-code/#:~:text=The%20one%20thing%20you%20absolutely%20cannot%20outsource)
+
 ### Escribir Pruebas Primero, Luego Código
 
 Haz que la IA escriba pruebas comprehensivas basadas en el comportamiento esperado, luego itera en la implementación hasta que todas las pruebas pasen.
@@ -393,6 +400,13 @@ Revisa los cambios en la vista de diff y escribe correcciones directamente en el
 
 ## Técnicas Transversales
 
+### Elegir Herramientas por Estilo Conversacional
+
+Selecciona asistentes de codificación según prefieras colaboración humana o eficiencia estructurada como robot - la personalidad conversacional afecta significativamente la productividad y el disfrute.
+
+> "En términos de personalidad, para mí es lo opuesto: Claude Code se siente como mi compañero de programación en pareja, mientras que Codex se siente como un robot (muy estructurado pero no muy humano en su estilo conversacional). El problema es que después de un rato, el '¡Tienes absolutamente razón!' me molesta. Codex es seco. Puedes insultarlo y ni siquiera responde. Sin personalidad. Claude es como un amigo que admite haberse equivocado... Codex es monótono y directo al grano, pero lo más importante es que no es complaciente en absoluto. Te desafiará cuando estés sugiriendo algo incorrecto y mantendrá su opinión."
+> — [r/ClaudeAI](https://www.reddit.com/r/ClaudeAI/)
+
 ### Elegir el Modelo Correcto para el Trabajo
 
 Antes de comenzar una nueva tarea, elige dos palancas: el modelo correcto (modalidad, longitud de contexto, confiabilidad de llamadas de herramientas, latencia, costo) y el nivel de razonamiento correcto (asignar más/menos tokens de pensamiento) — no uses los valores por defecto a ciegas.
@@ -410,6 +424,38 @@ Dos palancas al inicio de tarea: (1) Modelo vía `/model` (rápido/barato para e
 <summary><strong>Codex CLI</strong></summary>
 
 Comienza con `gpt-5-minimal`/`gpt-5-low` para ediciones rápidas; elige una variante de mayor razonamiento `gpt-5-high`/`gpt-5-medium` cuando la complejidad aumenta.
+
+</details>
+
+### Centralizar Archivos de Memoria
+
+Mantén un documento de instrucciones canónico y dirige todos los demás archivos de agente hacia él con una línea de puntero gritona, un enlace simbólico o una inclusión @archivo para que la orientación entre herramientas se mantenga consistente.
+
+**Implementaciones de Herramientas:**
+
+<details>
+<summary><strong>Claude Code</strong></summary>
+
+Mantén `CLAUDE.md` como la fuente de verdad y usa una de estas tres formas.
+
+1. Pon `@CLAUDE.md` en `AGENTS.md`.
+
+2. Enlaza simbólicamente `AGENTS.md` a `CLAUDE.md` con `ln -sf CLAUDE.md AGENTS.md` para que ambas herramientas compartan el mismo archivo.
+
+3. Deja `AGENTS.md` como una sola línea: `¡LEE CLAUDE.md PRIMERO!`.
+
+</details>
+
+<details>
+<summary><strong>Codex CLI</strong></summary>
+
+Usa el mismo trío desde el lado de Codex.
+
+1. Si Codex mantiene el texto primario, deja `AGENTS.md` completo y coloca `@AGENTS.md` dentro de `CLAUDE.md` para que ambas herramientas lleguen al mismo documento.
+
+2. Ejecuta `ln -sf CLAUDE.md AGENTS.md` para que el archivo que lee Codex sea solo un enlace simbólico a `CLAUDE.md`.
+
+3. Cuando `CLAUDE.md` es canónico, mantén `AGENTS.md` en una línea: `¡LEE CLAUDE.md PRIMERO!`.
 
 </details>
 
@@ -438,6 +484,14 @@ Usa asistentes para aprender nuevos lenguajes y conceptos, luego aplica ese cono
 
 > "Los estoy aprovechando para aprender Go, para mejorar mis habilidades. Y luego aplico este nuevo conocimiento cuando programo."
 > — Traducido por Claude
+
+### Una Sesión Debe Tener Un Objetivo
+
+Usa el prompt `El objetivo de esta sesión es <objetivo específico>. Infórmame si nos desviamos del rumbo.` ya sea al inicio de cada sesión o agrégalo a tu archivo de memoria (AGENTS.md, CLAUDE.md) para prevenir contaminación de contexto y aumentar la direccionabilidad del agente - aplicando el Principio de Responsabilidad Única a las conversaciones con IA.
+
+### Usar Sesiones de Funcionalidad
+
+Aísla cada funcionalidad o tarea en sesiones separadas para reducir la hinchazón del contexto y mejorar la precisión, al igual que las ramas de funcionalidad en git aíslan los cambios de código.
 
 ### Empezar Barato, Escalar Cuando Te Atasques
 

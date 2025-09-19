@@ -2,6 +2,21 @@
 
 All notable changes to the Coding with AI techniques collection are documented here.
 
+## September 19, 2025 - v0.2
+
+### Added
+- "Choose Tools by Conversational Style" technique - Guide for selecting tools based on personality preferences
+- "Centralise Memory Files" technique - Keep instructions consistent across tools using symlinks/includes
+- "A Session Should Have One Goal" technique - Apply single responsibility principle to AI conversations  
+- "Use Feature Sessions" technique - Isolate features in separate sessions like git feature branches
+- "Always Test Code Yourself" technique - Critical testing responsibility that cannot be outsourced
+- "Create Rollback Points While Coding" technique enhanced with comprehensive tool implementations
+
+### Changed
+- Updated all README translations (Spanish, German, French, Japanese) with new techniques
+- Enhanced tool implementations with detailed commands and workflows
+- Updated active development dates across all language versions
+
 ## September 16, 2025 - v0.1
 
 ### Added

@@ -1,4 +1,4 @@
-> **Développement Actif** — Mis à jour le 16 septembre 2025  
+> **Développement Actif** — Mis à jour le 19 septembre 2025  
 > Dernière : Ajout de nouvelles techniques de planification et de sélection de modèles  
 > [Voir toutes les mises à jour →](CHANGELOG.md)
 
@@ -341,6 +341,13 @@ Concevez des systèmes avec une journalisation complète pour que les agents IA 
 
 ## Tests et QA
 
+### Toujours tester le code soi-même
+
+Vous ne pouvez absolument pas externaliser les tests - vérifiez toujours que le code fonctionne réellement.
+
+> "La seule chose que vous ne pouvez absolument pas externaliser à la machine, c'est tester que le code fonctionne réellement. Votre responsabilité en tant que développeur logiciel est de livrer des systèmes qui fonctionnent. Si vous ne l'avez pas vu tourner, ce n'est pas un système qui fonctionne. Vous devez investir dans le renforcement de ces habitudes de QA manuelle."
+> — [Simon Willison](https://simonwillison.net/2025/Mar/11/using-llms-for-code/#:~:text=The%20one%20thing%20you%20absolutely%20cannot%20outsource)
+
 ### Écrire les tests d'abord, puis le code
 
 Faites écrire à l'IA des tests complets basés sur le comportement attendu, puis itérez sur l'implémentation jusqu'à ce que tous les tests passent.
@@ -352,6 +359,13 @@ Faites écrire à l'IA des tests complets basés sur le comportement attendu, pu
 > — Traduit par Claude
 
 ## Techniques transversales
+
+### Choisir les outils par style conversationnel
+
+Sélectionnez les assistants de codage selon que vous préférez une collaboration humaine ou une efficacité structurée comme un robot - la personnalité conversationnelle affecte significativement la productivité et le plaisir.
+
+> "En termes de personnalité, c'est l'opposé pour moi : Claude Code me fait l'effet d'un partenaire de programmation en binôme, tandis que Codex me fait l'effet d'un robot (très structuré mais pas très humain dans son style conversationnel). Le problème c'est qu'au bout d'un moment, le 'Vous avez absolument raison !' commence à m'énerver. Codex est sec. Vous pouvez l'insulter et il ne répond même pas. Aucune personnalité. Claude est comme un ami qui admet avoir merdé... Codex est monotone et va droit au but, mais le plus important c'est qu'il n'est pas du tout complaisant. Il vous défiera quand vous suggérez quelque chose de faux et maintiendra son opinion."
+> — [r/ClaudeAI](https://www.reddit.com/r/ClaudeAI/)
 
 ### Choisir le bon modèle pour le travail
 
