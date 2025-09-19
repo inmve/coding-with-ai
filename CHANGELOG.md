@@ -16,7 +16,6 @@ All notable changes to the Coding with AI techniques collection are documented h
 - Updated all README translations (Spanish, German, French, Japanese) with new techniques
 - Enhanced tool implementations with detailed commands and workflows
 - Updated active development dates across all language versions
-- Improved session management and context organization guidance
 
 ### Fixed  
 - Verified no duplicate content across all technique additions
