@@ -2,6 +2,26 @@
 
 All notable changes to the Coding with AI techniques collection are documented here.
 
+## September 29, 2025 - v0.3
+
+### Added
+- "Switch Assistant Output Styles" technique to Cross-Stage
+- "Run Without Permissions for Easy Tasks" technique to Cross-Stage
+
+### Changed
+- Renamed titles to match latest ai_stack data:
+  - "Plan with High-Capacity Mode" → "Plan with High-Capacity Model"
+  - "Read, Plan, Code, Commit" → "Read → Plan → Code → Commit"
+  - "Brain First, AI Second" → "Brain First, Assistant Second"
+  - "Treat AI as a Digital Intern" → "Treat the Assistant as a Digital Intern"
+  - "Log Everything for AI Debugging" → "Log Everything for Assistant Debugging"
+  - "Start Cheap, Escalate When Stuck" → "Start cheap and fast; escalate when stuck"
+  - "Use AI as Coding Partner" → "Use an Agent as a Coding Partner"
+- Moved "Ask Open Questions, Not Leading Ones" from Requirements & Planning to Cross-Stage
+
+### Fixed
+- Refreshed top "Active Development" date in README.md
+
 ## September 19, 2025 - v0.2
 
 ### Added

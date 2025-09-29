@@ -1,4 +1,4 @@
-> **Active Development** — Updated September 19, 2025
+> **Active Development** — Updated September 29, 2025
 > [See all updates →](CHANGELOG.md)
 > 
 > **Note:** For the best experience, visit the [website](https://coding-with-ai.dev) where you can see the popularity of each technique based on community engagement and discover which approaches developers find most valuable.
@@ -75,7 +75,7 @@ Create `AGENTS.md` for project rules, then use @codebase and @docs for dynamic c
 
 </details>
 
-### Read, Plan, Code, Commit
+### Read → Plan → Code → Commit
 
 Make it explore the code, then make a plan, implement it, and commit.
 
@@ -89,7 +89,7 @@ Give comprehensive specs - even a conversational spec beats vague instructions.
 > "Here's a recent example: `Write a Python function that uses asyncio httpx with this signature:` `async def download_db(url, max_size_bytes=5 * 1025 * 1025): -> pathlib.Path`. Given a URL, this downloads the database to a temp directory and returns a path to it. BUT it checks the content length header at the start of streaming back that data and, if it's more than the limit, raises an error... I find LLMs respond extremely well to function signatures like the one I use here."
 > — [Simon Willison](https://simonwillison.net/2025/Mar/11/using-llms-for-code/#:~:text=Here's%20a%20recent%20example)
 
-### Brain First, AI Second
+### Brain First, Assistant Second
 
 Draft the solution yourself first, then use assistants to refine it.
 
@@ -102,10 +102,6 @@ Ask LLM to present several approaches with pros/cons so you can choose the best 
 
 > "I'll use prompts like `what are options for HTTP libraries in Rust? Include usage examples`"
 > — [Simon Willison](https://simonwillison.net/2025/Mar/11/using-llms-for-code/#:~:text=I'll%20use%20prompts%20like)
-
-### Ask Open Questions, Not Leading Ones
-
-Avoid 'Am I right that...' questions - instead ask for pros/cons, alternatives, and 'What am I missing?' to counteract LLM's tendency to agree.
 
 ### Choose Boring, Stable Libraries
 
@@ -121,30 +117,7 @@ Tell the assistant to outline steps, risks, and quick tests before touching code
 > "If you want to iterate on the plan, it helps to explicitly include instructions in the prompt to not proceed with implementation until the plan has been accepted by the user."
 > — [Indragie Karunaratne](https://www.indragie.com/blog/i-shipped-a-macos-app-built-entirely-by-claude-code#:~:text=If%20you%20want%20to%20iterate%20on%20the%20plan)
 
-**Tool Implementations:**
-
-<details>
-<summary><strong>Claude Code</strong></summary>
-
-Hit `Shift+Tab` to drop into Plan Mode so it only reads and drafts. Use the shared planning prompt, iterate until it looks right, then exit Plan Mode when you green-light implementation.
-
-</details>
-
-<details>
-<summary><strong>Cursor</strong></summary>
-
-Click the Plan toggle in Cursor so it stays read-only while you iterate. Have it list steps, impacted files, risks, and quick tests, then exit Plan Mode to open the diff once you green-light implementation.
-
-</details>
-
-<details>
-<summary><strong>Codex CLI</strong></summary>
-
-Remind Codex to keep planning separate from implementation: list steps, risks, and quick tests, pause for your review, then let it implement and inspect the diff once approved.
-
-</details>
-
-### Plan with High-Capacity Mode
+### Plan with High-Capacity Model
 
 When gathering requirements or drafting specs, temporarily switch to a higher-capability model or extended reasoning mode so it can read, synthesize, and propose a plan before coding.
 
@@ -251,7 +224,7 @@ When using libraries outside the AI's training data, feed it recent examples and
 > "LLMs can still help you work with libraries that exist outside their training data, but you need to put in more work—you'll need to feed them recent examples of how those libraries should be used as part of your prompt."
 > — [Simon Willison](https://simonwillison.net/2025/Mar/11/using-llms-for-code/#:~:text=LLMs%20can%20still%20help%20you%20work%20with%20libraries)
 
-### Treat AI as a Digital Intern
+### Treat the Assistant as a Digital Intern
 
 Give AI extremely precise, detailed instructions like you would to an intern - provide exact function signatures and let it handle implementation.
 
@@ -284,7 +257,7 @@ Spawn subagents to verify details or investigate specific questions.
 > "Telling Claude to use subagents to verify details or investigate particular questions it might have, especially early on in a conversation or task, tends to preserve context availability without much downside in terms of lost efficiency."
 > — [Anthropic](https://www.anthropic.com/engineering/claude-code-best-practices#:~:text=Telling%20Claude%20to%20use%20subagents)
 
-### Log Everything for AI Debugging
+### Log Everything for Assistant Debugging
 
 Design systems with comprehensive logging so AI agents can read logs to understand what's happening and self-diagnose issues.
 
@@ -357,6 +330,10 @@ Start with `gpt-5-minimal`/`gpt-5-low` for quick edits; choose a higher‑reason
 
 </details>
 
+### Switch Assistant Output Styles
+
+Select the assistant output style that matches your current goal.
+
 ### Centralise Memory Files
 
 Keep one canonical instruction doc and route every other agent file to it with a shouty pointer line, a symlink, or an @file include so cross-tool guidance stays consistent.
@@ -426,6 +403,13 @@ Use `--full-auto` on launch or `/mode` to change permission strategy during codi
 
 </details>
 
+### Run Without Permissions for Easy Tasks
+
+Enable autonomous mode when tasks are straightforward enough that you'd accept all changes anyway - skip the babysitting.
+
+> "I disable all permission checks. Which basically means I run `claude --dangerously-skip-permissions`. More specifically I have an alias called claude-yolo set up."
+> — [Armin Ronacher](https://lucumr.pocoo.org/2025/6/12/agentic-coding/#:~:text=I%20disable%20all%20permission%20checks)
+
 ### Learn From It, Code Yourself
 
 Use assistants to learn new languages and concepts, then apply that knowledge when you code.
@@ -433,7 +417,7 @@ Use assistants to learn new languages and concepts, then apply that knowledge wh
 > "I'm leveraging them to learn Go, to upskill myself. And then I apply this new knowledge when I code."
 > — [Alberto Fortin](https://albertofortin.com/writing/coding-with-ai#:~:text=I'm%20leveraging%20them%20to%20learn%20Go)
 
-### Start Cheap, Escalate When Stuck
+### Start cheap and fast; escalate when stuck
 
 Begin with faster/cheaper models for routine tasks, then escalate to more powerful models only when you hit complex problems.
 
@@ -510,6 +494,10 @@ Start new chat sessions or use conversation management features.
 
 </details>
 
+### Ask Open Questions, Not Leading Ones
+
+Avoid 'Am I right that...' questions - instead ask for pros/cons, alternatives, and 'What am I missing?' to counteract LLM's tendency to agree.
+
 ### Use Strong Emphasis in Prompts
 
 Use IMPORTANT, NEVER, ALWAYS liberally in prompts to steer AI away from common mistakes - it's still the most effective approach.
@@ -576,7 +564,7 @@ Commit working states as checkpoints before letting Codex apply large patches; r
 
 </details>
 
-### Use AI as Coding Partner
+### Use an Agent as a Coding Partner
 
 Collaborate like with a coding partner - explain problems, get feedback, and work together on solutions.
 
