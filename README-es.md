@@ -82,6 +82,9 @@ Bosqueja la solución tú mismo primero, luego usa asistentes para refinarla.
 > "Subconscientemente estoy recurriendo por defecto a la IA para todo lo relacionado con la codificación. He estado usando menos lápiz y papel. Tan pronto como necesito planificar una nueva función, mi primer pensamiento es preguntar a o4-mini-high cómo hacerlo, en lugar de usar mis neuronas. Odio esto. Y lo estoy cambiando."
 > — Traducido por Claude
 
+> "Write the initial version yourself and ask AI to review and improve it."
+> — [Anton Zhiyanov](https://antonz.org/write-code/#:~:text=Write%20the%20initial%20version%20yourself%20and%20ask%20AI%20to%20review%20and%20improve%20it)
+
 ### Obtener Múltiples Opciones
 
 Pide al LLM que presente varios enfoques con pros/contras para que puedas elegir la mejor opción.
@@ -159,6 +162,16 @@ Usa `/model gpt-5-high` (u otro nivel de razonamiento extendido) para que el asi
 
 </details>
 
+### Desarrollo Basado en Especificaciones: Iterar Hasta que Funcione
+
+Itera sobre especificaciones en Markdown hasta que el asistente genere código funcional - tratando las especificaciones como la fuente de verdad en lugar de escribir código directamente.
+
+> "The workflow involves iterating on specifications in Markdown files, asking AI to compile into code, running/testing the app, and updating the spec if something doesn't work as expected. Developers should treat specifications as living documents, constantly updating and refining them to guide AI code generation with increasing precision."
+> — [GitHub Engineering](https://github.blog/ai-and-ml/generative-ai/spec-driven-development-using-markdown-as-a-programming-language-when-building-with-ai/)
+
+> "**Counter-argument:** If, given the prompt, AI does the job perfectly on first or second iteration — fine. Otherwise, stop refining the prompt. Go write some code, then get back to the AI. You'll get much better results."
+> — [Anton Zhiyanov](https://antonz.org/write-code/#:~:text=If%2C%20given%20the%20prompt%2C%20AI%20does%20the%20job%20perfectly%20on%20first%20or%20second%20iteration%20%E2%80%94%20fine.%20Otherwise%2C%20stop%20refining%20the%20prompt)
+
 ## Interfaz y Prototipado
 
 ### Codificación por Vibra
@@ -223,6 +236,13 @@ Al refinar diseños, haz que el asistente dibuje wireframes ASCII para que pueda
 
 Pide explícitamente a la herramienta que confirme su entendimiento de la tarea antes de comenzar la implementación para asegurar alineación y reducir expectativas no coincidentes.
 
+### Manejar las Partes Críticas, Delegar el Resto
+
+Escribe tú mismo las partes críticas y complejas del código y delega la implementación directa restante al asistente.
+
+> "Write the critical parts and ask AI to do the rest."
+> — [Anton Zhiyanov](https://antonz.org/write-code/#:~:text=Write%20the%20critical%20parts%20and%20ask%20AI%20to%20do%20the%20rest)
+
 ### Generar Código, No Dependencias
 
 Escribe código personalizado en lugar de incorporar más librerías cuando trabajes con asistentes.
@@ -243,15 +263,18 @@ Comienza volcando código existente en el chat para sembrar el contexto, luego m
 > "A menudo comienzo un nuevo chat volcando código existente para sembrar ese contexto, luego trabajo con el LLM para modificarlo de alguna manera."
 > — Traducido por Claude
 
-### Dar Firmas de Función Exactas
+### Definir Estructura, Delegar Implementación
 
-Da exactamente qué firma de función quieres - deja que maneje los detalles de implementación.
+Proporciona la estructura - firmas de función, esquemas de código o andamiaje - y deja que el asistente complete los detalles de implementación.
 
 > "I find LLMs respond extremely well to function signatures like the one I use here. I get to act as the function designer, the LLM does the work of building the body to my specification. I'll often follow-up with `Now write me the tests using pytest`. Again, I dictate my technology of choice—I want the LLM to save me the time of having to type out the code that's sitting in my head already."
 > — [Simon Willison](https://simonwillison.net/2025/Mar/11/using-llms-for-code/#:~:text=I%20find%20LLMs%20respond%20extremely%20well)
 
 > "Encuentro que los LLMs responden extremadamente bien a firmas de función como la que uso aquí. Puedo actuar como el diseñador de la función, el LLM hace el trabajo de construir el cuerpo según mi especificación. A menudo continúo con `Ahora escríbeme las pruebas usando pytest`. De nuevo, dicto mi elección de tecnología—quiero que el LLM me ahorre el tiempo de tener que escribir el código que ya está en mi cabeza."
 > — Traducido por Claude
+
+> "Write an outline of the code and ask AI to fill the missing parts."
+> — [Anton Zhiyanov](https://antonz.org/write-code/#:~:text=Write%20an%20outline%20of%20the%20code%20and%20ask%20AI%20to%20fill%20the%20missing%20parts)
 
 ### Delegar Tareas Tediosas
 

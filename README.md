@@ -96,6 +96,9 @@ Draft the solution yourself first, then use assistants to refine it.
 > "I'm subconsciously defaulting to AI for all things coding. I've been using pen and paper less. As soon as I need to plan a new feature, my first thought is asking o4-mini-high how to do it, instead of my neurons. I hate this. And I'm changing it."
 > — [Alberto Fortin](https://albertofortin.com/writing/coding-with-ai#:~:text=I'm%20subconsciously%20defaulting%20to%20AI)
 
+> "Write the initial version yourself and ask AI to review and improve it."
+> — [Anton Zhiyanov](https://antonz.org/write-code/#:~:text=Write%20the%20initial%20version%20yourself%20and%20ask%20AI%20to%20review%20and%20improve%20it)
+
 ### Get Multiple Options
 
 Ask LLM to present several approaches with pros/cons so you can choose the best option.
@@ -136,6 +139,16 @@ Run `/model` and pick `opus` (or another higher tier) when scoping requirements 
 Use `/model gpt-5-high` (or another extended-reasoning tier) to have the assistant digest context and draft the spec, then step back down once the plan is locked.
 
 </details>
+
+### Spec-Driven Development: Iterate Until Working
+
+Iterate on specifications in Markdown until the assistant generates working code - treating specs as the source of truth rather than writing code directly.
+
+> "The workflow involves iterating on specifications in Markdown files, asking AI to compile into code, running/testing the app, and updating the spec if something doesn't work as expected. Developers should treat specifications as living documents, constantly updating and refining them to guide AI code generation with increasing precision."
+> — [GitHub Engineering](https://github.blog/ai-and-ml/generative-ai/spec-driven-development-using-markdown-as-a-programming-language-when-building-with-ai/)
+
+> "**Counter-argument:** If, given the prompt, AI does the job perfectly on first or second iteration — fine. Otherwise, stop refining the prompt. Go write some code, then get back to the AI. You'll get much better results."
+> — [Anton Zhiyanov](https://antonz.org/write-code/#:~:text=If%2C%20given%20the%20prompt%2C%20AI%20does%20the%20job%20perfectly%20on%20first%20or%20second%20iteration%20%E2%80%94%20fine.%20Otherwise%2C%20stop%20refining%20the%20prompt)
 
 ## UI & Prototyping
 
@@ -180,6 +193,13 @@ When refining layouts, have the assistant sketch ASCII wireframes so you can eva
 
 Explicitly ask the tool to confirm its understanding of the task before starting implementation to ensure alignment and reduce mismatched expectations.
 
+### Handle Critical Parts, Delegate the Rest
+
+Write the critical, complex parts of the code yourself and delegate the remaining straightforward implementation to the assistant.
+
+> "Write the critical parts and ask AI to do the rest."
+> — [Anton Zhiyanov](https://antonz.org/write-code/#:~:text=Write%20the%20critical%20parts%20and%20ask%20AI%20to%20do%20the%20rest)
+
 ### Generate Code, Not Dependencies
 
 Write custom code rather than pulling in more libraries when working with assistants.
@@ -194,12 +214,15 @@ Start by dumping existing code into the chat to seed the context, then modify fr
 > "I often start a new chat by dumping in existing code to seed that context, then work with the LLM to modify it in some way."
 > — [Simon Willison](https://simonwillison.net/2025/Mar/11/using-llms-for-code/#:~:text=I%20often%20start%20a%20new%20chat)
 
-### Give Exact Function Signatures
+### Define Structure, Delegate Implementation
 
-Give exactly what function signature you want - let it handle the implementation details.
+Provide the structure - function signatures, code outlines, or scaffolding - and let the assistant fill in the implementation details.
 
 > "I find LLMs respond extremely well to function signatures like the one I use here. I get to act as the function designer, the LLM does the work of building the body to my specification. I'll often follow-up with `Now write me the tests using pytest`. Again, I dictate my technology of choice—I want the LLM to save me the time of having to type out the code that's sitting in my head already."
 > — [Simon Willison](https://simonwillison.net/2025/Mar/11/using-llms-for-code/#:~:text=I%20find%20LLMs%20respond%20extremely%20well)
+
+> "Write an outline of the code and ask AI to fill the missing parts."
+> — [Anton Zhiyanov](https://antonz.org/write-code/#:~:text=Write%20an%20outline%20of%20the%20code%20and%20ask%20AI%20to%20fill%20the%20missing%20parts)
 
 ### Offload Tedious Tasks
 
