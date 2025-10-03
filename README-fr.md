@@ -82,6 +82,12 @@ Donnez des spécifications complètes - même une spécification conversationnel
 > "Je recours inconsciemment par défaut à l'IA pour tout ce qui concerne le codage. J'utilise moins le stylo et le papier. Dès que j'ai besoin de planifier une nouvelle fonctionnalité, ma première pensée est de demander à o4-mini-high comment le faire, au lieu d'utiliser mes neurones. Je déteste ça. Et je le change."
 > — Traduit par Claude
 
+> "Write the initial version yourself and ask AI to review and improve it."
+> — [Anton Zhiyanov](https://antonz.org/write-code/#:~:text=Write%20the%20initial%20version%20yourself%20and%20ask%20AI%20to%20review%20and%20improve%20it)
+
+> "Écrivez la version initiale vous-même et demandez à l'IA de la réviser et de l'améliorer."
+> — Traduit par Claude
+
 ### Obtenir plusieurs options
 
 Demandez au LLM de présenter plusieurs approches avec des avantages/inconvénients pour que vous puissiez choisir la meilleure option.
@@ -159,6 +165,22 @@ Utilisez `/model gpt-5-high` (ou un autre niveau de raisonnement étendu) pour q
 
 </details>
 
+### Développement piloté par les spécifications : Itérer jusqu'à ce que ça fonctionne
+
+Itérez sur les spécifications en Markdown jusqu'à ce que l'assistant génère du code fonctionnel - en traitant les spécifications comme la source de vérité plutôt que d'écrire directement du code.
+
+> "The workflow involves iterating on specifications in Markdown files, asking AI to compile into code, running/testing the app, and updating the spec if something doesn't work as expected. Developers should treat specifications as living documents, constantly updating and refining them to guide AI code generation with increasing precision."
+> — [GitHub Engineering](https://github.blog/ai-and-ml/generative-ai/spec-driven-development-using-markdown-as-a-programming-language-when-building-with-ai/)
+
+> "Le flux de travail implique d'itérer sur les spécifications dans des fichiers Markdown, de demander à l'IA de compiler en code, d'exécuter/tester l'application et de mettre à jour la spécification si quelque chose ne fonctionne pas comme prévu. Les développeurs doivent traiter les spécifications comme des documents vivants, les mettant constamment à jour et les affinant pour guider la génération de code IA avec une précision croissante."
+> — Traduit par Claude
+
+> "**Counter-argument:** If, given the prompt, AI does the job perfectly on first or second iteration — fine. Otherwise, stop refining the prompt. Go write some code, then get back to the AI. You'll get much better results."
+> — [Anton Zhiyanov](https://antonz.org/write-code/#:~:text=If%2C%20given%20the%20prompt%2C%20AI%20does%20the%20job%20perfectly%20on%20first%20or%20second%20iteration%20%E2%80%94%20fine.%20Otherwise%2C%20stop%20refining%20the%20prompt)
+
+> "**Contre-argument:** Si, étant donné l'invite, l'IA fait le travail parfaitement à la première ou deuxième itération — très bien. Sinon, arrêtez d'affiner l'invite. Allez écrire du code, puis revenez à l'IA. Vous obtiendrez de bien meilleurs résultats."
+> — Traduit par Claude
+
 ## UI & Prototypage
 
 ### Codage par vibration
@@ -223,6 +245,16 @@ Lors du raffinement des mises en page, faites que l'assistant dessine des wirefr
 
 Demandez explicitement à l'outil de confirmer sa compréhension de la tâche avant de commencer l'implémentation pour assurer l'alignement et réduire les attentes incompatibles.
 
+### Gérer les parties critiques, déléguer le reste
+
+Écrivez vous-même les parties critiques et complexes du code et déléguez l'implémentation directe restante à l'assistant.
+
+> "Write the critical parts and ask AI to do the rest."
+> — [Anton Zhiyanov](https://antonz.org/write-code/#:~:text=Write%20the%20critical%20parts%20and%20ask%20AI%20to%20do%20the%20rest)
+
+> "Écrivez les parties critiques et demandez à l'IA de faire le reste."
+> — Traduit par Claude
+
 ### Générer du code, pas des dépendances
 
 Écrivez du code personnalisé plutôt que d'inclure plus de bibliothèques lorsque vous travaillez avec des assistants.
@@ -243,14 +275,20 @@ Commencez par verser du code existant dans le chat pour ensemencer le contexte, 
 > "Je commence souvent une nouvelle conversation en déversant du code existant pour ensemencer ce contexte, puis je travaille avec le LLM pour le modifier d'une manière ou d'une autre."
 > — Traduit par Claude
 
-### Donner des signatures de fonction exactes
+### Définir la structure, déléguer l'implémentation
 
-Donnez exactement quelle signature de fonction vous voulez - laissez-le gérer les détails d'implémentation.
+Fournissez la structure - signatures de fonction, esquissess de code ou échafaudage - et laissez l'assistant remplir les détails d'implémentation.
 
 > "I find LLMs respond extremely well to function signatures like the one I use here. I get to act as the function designer, the LLM does the work of building the body to my specification. I'll often follow-up with `Now write me the tests using pytest`. Again, I dictate my technology of choice—I want the LLM to save me the time of having to type out the code that's sitting in my head already."
 > — [Simon Willison](https://simonwillison.net/2025/Mar/11/using-llms-for-code/#:~:text=I%20find%20LLMs%20respond%20extremely%20well)
 
 > "Je trouve que les LLMs répondent extrêmement bien aux signatures de fonction comme celle que j'utilise ici. Je peux agir comme le concepteur de la fonction, le LLM fait le travail de construire le corps selon ma spécification. Je suis souvent suivi par `Maintenant écris-moi les tests en utilisant pytest`. Encore une fois, je dicte mon choix de technologie—je veux que le LLM me fasse gagner le temps d'avoir à taper le code qui est déjà dans ma tête."
+> — Traduit par Claude
+
+> "Write an outline of the code and ask AI to fill the missing parts."
+> — [Anton Zhiyanov](https://antonz.org/write-code/#:~:text=Write%20an%20outline%20of%20the%20code%20and%20ask%20AI%20to%20fill%20the%20missing%20parts)
+
+> "Écrivez une esquisse du code et demandez à l'IA de remplir les parties manquantes."
 > — Traduit par Claude
 
 ### Déléguer les tâches fastidieuses

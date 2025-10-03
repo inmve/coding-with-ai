@@ -82,6 +82,12 @@
 > "私は無意識のうちにコーディングのすべてをAIにデフォルトで頼っています。ペンと紙を使うことが少なくなりました。新しい機能を計画する必要があるとすぐに、私の最初の考えは私のニューロンの代わりにo4-mini-highにそれをする方法を尋ねることです。これを嫌っています。そして私はそれを変えています。"
 > — Claudeによる翻訳
 
+> "Write the initial version yourself and ask AI to review and improve it."
+> — [Anton Zhiyanov](https://antonz.org/write-code/#:~:text=Write%20the%20initial%20version%20yourself%20and%20ask%20AI%20to%20review%20and%20improve%20it)
+
+> "最初のバージョンを自分で書き、AIにレビューと改善を依頼してください。"
+> — Claudeによる翻訳
+
 ### 複数の選択肢を得る
 
 最良の選択肢を選べるように、LLMに長所/短所を含む複数のアプローチを提示させます。
@@ -159,6 +165,22 @@ Codexに計画を実装から分離しておくように思い出させます：
 
 </details>
 
+### 仕様駆動開発：動作するまで反復する
+
+Markdownの仕様書を反復し、アシスタントが機能するコードを生成するまで続ける - 直接コードを書くのではなく、仕様書を真実の源として扱います。
+
+> "The workflow involves iterating on specifications in Markdown files, asking AI to compile into code, running/testing the app, and updating the spec if something doesn't work as expected. Developers should treat specifications as living documents, constantly updating and refining them to guide AI code generation with increasing precision."
+> — [GitHub Engineering](https://github.blog/ai-and-ml/generative-ai/spec-driven-development-using-markdown-as-a-programming-language-when-building-with-ai/)
+
+> "ワークフローには、Markdownファイルの仕様書を反復し、AIにコードへのコンパイルを依頼し、アプリを実行/テストし、期待通りに動作しない場合は仕様書を更新することが含まれます。開発者は仕様書を生きたドキュメントとして扱い、精度を高めてAIコード生成を導くために常に更新し洗練させる必要があります。"
+> — Claudeによる翻訳
+
+> "**Counter-argument:** If, given the prompt, AI does the job perfectly on first or second iteration — fine. Otherwise, stop refining the prompt. Go write some code, then get back to the AI. You'll get much better results."
+> — [Anton Zhiyanov](https://antonz.org/write-code/#:~:text=If%2C%20given%20the%20prompt%2C%20AI%20does%20the%20job%20perfectly%20on%20first%20or%20second%20iteration%20%E2%80%94%20fine.%20Otherwise%2C%20stop%20refining%20the%20prompt)
+
+> "**反論:** プロンプトを与えられた時、AIが1回目または2回目の反復で完璧に仕事をするなら、問題ありません。そうでなければ、プロンプトの洗練を止めてください。コードを書きに行って、それからAIに戻ってください。はるかに良い結果が得られます。"
+> — Claudeによる翻訳
+
 ## UIとプロトタイピング
 
 ### バイブコーディング
@@ -223,6 +245,16 @@ UIを`もっと美しく`または`もっとエレガント`にするように�
 
 実装を開始する前にツールにタスクの理解を明示的に確認するよう求め、整合を確保し、一致しない期待を減らします。
 
+### 重要な部分を処理し、残りを委任する
+
+コードの重要で複雑な部分は自分で書き、残りの単純な実装はアシスタントに委任します。
+
+> "Write the critical parts and ask AI to do the rest."
+> — [Anton Zhiyanov](https://antonz.org/write-code/#:~:text=Write%20the%20critical%20parts%20and%20ask%20AI%20to%20do%20the%20rest)
+
+> "重要な部分を書き、AIに残りをやってもらってください。"
+> — Claudeによる翻訳
+
 ### 依存関係ではなくコードを生成する
 
 アシスタントと作業する際は、より多くのライブラリを取り込むよりもカスタムコードを記述します。
@@ -243,14 +275,20 @@ UIを`もっと美しく`または`もっとエレガント`にするように�
 > "私はしばしば既存のコードを投入してそのコンテキストをシードすることで新しいチャットを始め、その後LLMと連携してそれを何らかの方法で修正します。"
 > — Claudeによる翻訳
 
-### 正確な関数シグネチャを与える
+### 構造を定義し、実装を委任する
 
-欲しい関数シグネチャを正確に与える - 実装の詳細は任せましょう。
+構造を提供する - 関数シグネチャ、コードの概要、またはスキャフォールディング - アシスタントに実装の詳細を埋めさせます。
 
 > "I find LLMs respond extremely well to function signatures like the one I use here. I get to act as the function designer, the LLM does the work of building the body to my specification. I'll often follow-up with `Now write me the tests using pytest`. Again, I dictate my technology of choice—I want the LLM to save me the time of having to type out the code that's sitting in my head already."
 > — [Simon Willison](https://simonwillison.net/2025/Mar/11/using-llms-for-code/#:~:text=I%20find%20LLMs%20respond%20extremely%20well)
 
 > "私はLLMがここで使用するような関数シグネチャに非常によく反応することを発見しています。私は関数設計者として振る舞うことができ、LLMは私の仕様に従ってボディを構築する作業を行います。私はしばしば`今度はpytestを使ってテストを書いて`でフォローアップします。再び、私は私の技術選択を指示します—私はLLMが私の頭の中にすでにあるコードをタイプアウトする時間を節約してくれることを望みます。"
+> — Claudeによる翻訳
+
+> "Write an outline of the code and ask AI to fill the missing parts."
+> — [Anton Zhiyanov](https://antonz.org/write-code/#:~:text=Write%20an%20outline%20of%20the%20code%20and%20ask%20AI%20to%20fill%20the%20missing%20parts)
+
+> "コードの概要を書き、AIに欠けている部分を埋めるよう依頼してください。"
 > — Claudeによる翻訳
 
 ### 退屈なタスクをオフロードする

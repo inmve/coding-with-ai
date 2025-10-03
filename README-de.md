@@ -82,6 +82,12 @@ Entwerfen Sie die Lösung zuerst selbst, dann verwenden Sie Assistenten zur Verf
 > "Ich verwende unbewusst standardmäßig AI für alles, was mit Programmieren zu tun hat. Ich benutze Stift und Papier weniger. Sobald ich ein neues Feature planen muss, ist mein erster Gedanke, o4-mini-high zu fragen, wie man es macht, anstatt meine Neuronen. Ich hasse das. Und ich ändere es."
 > — Übersetzt von Claude
 
+> "Write the initial version yourself and ask AI to review and improve it."
+> — [Anton Zhiyanov](https://antonz.org/write-code/#:~:text=Write%20the%20initial%20version%20yourself%20and%20ask%20AI%20to%20review%20and%20improve%20it)
+
+> "Schreiben Sie die erste Version selbst und bitten Sie die KI, sie zu überprüfen und zu verbessern."
+> — Übersetzt von Claude
+
 ### Mehrere Optionen erhalten
 
 Bitten Sie das LLM, mehrere Ansätze mit Vor-/Nachteilen zu präsentieren, damit Sie die beste Option wählen können.
@@ -159,6 +165,22 @@ Verwenden Sie `/model gpt-5-high` (oder einen anderen erweiterten Denkertier), u
 
 </details>
 
+### Spezifikationsgesteuerte Entwicklung: Iterieren bis es funktioniert
+
+Iterieren Sie über Spezifikationen in Markdown, bis der Assistent funktionierenden Code generiert - behandeln Sie Spezifikationen als die einzige Quelle der Wahrheit statt Code direkt zu schreiben.
+
+> "The workflow involves iterating on specifications in Markdown files, asking AI to compile into code, running/testing the app, and updating the spec if something doesn't work as expected. Developers should treat specifications as living documents, constantly updating and refining them to guide AI code generation with increasing precision."
+> — [GitHub Engineering](https://github.blog/ai-and-ml/generative-ai/spec-driven-development-using-markdown-as-a-programming-language-when-building-with-ai/)
+
+> "Der Arbeitsablauf umfasst das Iterieren über Spezifikationen in Markdown-Dateien, die KI zu bitten, in Code zu kompilieren, die App auszuführen/zu testen und die Spezifikation zu aktualisieren, wenn etwas nicht wie erwartet funktioniert. Entwickler sollten Spezifikationen als lebende Dokumente behandeln, die ständig aktualisiert und verfeinert werden, um die KI-Codegenerierung mit zunehmender Präzision zu leiten."
+> — Übersetzt von Claude
+
+> "**Counter-argument:** If, given the prompt, AI does the job perfectly on first or second iteration — fine. Otherwise, stop refining the prompt. Go write some code, then get back to the AI. You'll get much better results."
+> — [Anton Zhiyanov](https://antonz.org/write-code/#:~:text=If%2C%20given%20the%20prompt%2C%20AI%20does%20the%20job%20perfectly%20on%20first%20or%20second%20iteration%20%E2%80%94%20fine.%20Otherwise%2C%20stop%20refining%20the%20prompt)
+
+> "**Gegenargument:** Wenn die KI bei der gegebenen Eingabeaufforderung die Arbeit in der ersten oder zweiten Iteration perfekt erledigt — gut. Andernfalls hören Sie auf, die Eingabeaufforderung zu verfeinern. Gehen Sie und schreiben Sie etwas Code, dann kehren Sie zur KI zurück. Sie werden viel bessere Ergebnisse erzielen."
+> — Übersetzt von Claude
+
 ## UI & Prototyping
 
 ### Vibe Coding
@@ -217,6 +239,16 @@ Beim Verfeinern von Layouts lassen Sie den Assistenten ASCII-Wireframes skizzier
 
 Bitten Sie das Tool explizit, sein Verständnis der Aufgabe zu bestätigen, bevor Sie mit der Implementierung beginnen, um Abstimmung sicherzustellen und nicht übereinstimmende Erwartungen zu reduzieren.
 
+### Kritische Teile handhaben, den Rest delegieren
+
+Schreiben Sie die kritischen, komplexen Teile des Codes selbst und delegieren Sie die verbleibende unkomplizierte Implementierung an den Assistenten.
+
+> "Write the critical parts and ask AI to do the rest."
+> — [Anton Zhiyanov](https://antonz.org/write-code/#:~:text=Write%20the%20critical%20parts%20and%20ask%20AI%20to%20do%20the%20rest)
+
+> "Schreiben Sie die kritischen Teile und bitten Sie die KI, den Rest zu erledigen."
+> — Übersetzt von Claude
+
 ### Code generieren, nicht Abhängigkeiten
 
 Schreiben Sie benutzerdefinierten Code, anstatt beim Arbeiten mit Assistenten mehr Bibliotheken einzubeziehen.
@@ -237,14 +269,20 @@ Beginnen Sie damit, vorhandenen Code in den Chat zu laden, um den Kontext zu set
 > "Ich beginne oft einen neuen Chat, indem ich vorhandenen Code hineinlade, um diesen Kontext zu setzen, dann arbeite ich mit dem LLM zusammen, um ihn auf irgendeine Weise zu modifizieren."
 > — Übersetzt von Claude
 
-### Exakte Funktionssignaturen geben
+### Struktur definieren, Implementierung delegieren
 
-Geben Sie genau an, welche Funktionssignatur Sie möchten - lassen Sie es die Implementierungsdetails handhaben.
+Geben Sie die Struktur an - Funktionssignaturen, Code-Skizzen oder Gerüste - und lassen Sie den Assistenten die Implementierungsdetails ausfüllen.
 
 > "I find LLMs respond extremely well to function signatures like the one I use here. I get to act as the function designer, the LLM does the work of building the body to my specification. I'll often follow-up with `Now write me the tests using pytest`. Again, I dictate my technology of choice—I want the LLM to save me the time of having to type out the code that's sitting in my head already."
 > — [Simon Willison](https://simonwillison.net/2025/Mar/11/using-llms-for-code/#:~:text=I%20find%20LLMs%20respond%20extremely%20well)
 
 > "Ich finde, LLMs reagieren extrem gut auf Funktionssignaturen wie die, die ich hier verwende. Ich kann als Funktions-Designer agieren, das LLM macht die Arbeit, den Körper nach meiner Spezifikation zu erstellen. Oft folge ich mit `Jetzt schreib mir die Tests mit pytest`. Wieder diktiere ich meine Technologie-Wahl—ich möchte, dass das LLM mir die Zeit spart, den Code austippen zu müssen, der bereits in meinem Kopf ist."
+> — Übersetzt von Claude
+
+> "Write an outline of the code and ask AI to fill the missing parts."
+> — [Anton Zhiyanov](https://antonz.org/write-code/#:~:text=Write%20an%20outline%20of%20the%20code%20and%20ask%20AI%20to%20fill%20the%20missing%20parts)
+
+> "Schreiben Sie eine Code-Skizze und bitten Sie die KI, die fehlenden Teile auszufüllen."
 > — Übersetzt von Claude
 
 ### Langweilige Aufgaben auslagern
