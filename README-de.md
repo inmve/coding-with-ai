@@ -1,4 +1,4 @@
-> **Aktive Entwicklung** — Aktualisiert am 19. September 2025  
+> **Aktive Entwicklung** — Aktualisiert am 4. Oktober 2025  
 > Neueste: Neue Planungs- und Modellauswahl-Techniken hinzugefügt  
 > [Alle Updates ansehen →](CHANGELOG.md)
 
@@ -381,6 +381,16 @@ Lassen Sie die KI umfassende Tests basierend auf erwartetem Verhalten schreiben,
 > — [Anthropic](https://www.anthropic.com/engineering/claude-code-best-practices#:~:text=Ask%20Claude%20to%20write%20tests)
 
 > "Bitten Sie Claude, Tests basierend auf erwarteten Input/Output-Paaren zu schreiben. Seien Sie explizit über die Tatsache, dass Sie testgetriebene Entwicklung machen, damit es vermeidet, Mock-Implementierungen zu erstellen, auch für Funktionalität, die noch nicht in der Codebasis existiert. Sagen Sie Claude, es soll die Tests ausführen und bestätigen, dass sie fehlschlagen. Bitten Sie Claude, die Tests zu committen, wenn Sie mit ihnen zufrieden sind. Bitten Sie Claude, Code zu schreiben, der die Tests besteht, und weisen Sie es an, die Tests nicht zu modifizieren."
+> — Übersetzt von Claude
+
+### KI-Code als Pull Request behandeln
+
+Überprüfen Sie KI-generierten Code, als wäre es ein Pull Request eines Kollegen, und geben Sie iterative Feedback-Kommentare, die der Assistent bearbeiten soll, anstatt direkt selbst zu editieren.
+
+> "treating the generated code as a Merge Request on which you submit comment for correction"
+> — [HN Discussion](https://news.ycombinator.com/item?id=45415232)
+
+> "den generierten Code als Merge Request behandeln, zu dem Sie Kommentare zur Korrektur einreichen"
 > — Übersetzt von Claude
 
 ## Übergreifende Techniken

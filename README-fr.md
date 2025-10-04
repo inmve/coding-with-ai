@@ -1,4 +1,4 @@
-> **Développement Actif** — Mis à jour le 19 septembre 2025  
+> **Développement Actif** — Mis à jour le 4 octobre 2025  
 > Dernière : Ajout de nouvelles techniques de planification et de sélection de modèles  
 > [Voir toutes les mises à jour →](CHANGELOG.md)
 
@@ -394,6 +394,16 @@ Faites écrire à l'IA des tests complets basés sur le comportement attendu, pu
 > — [Anthropic](https://www.anthropic.com/engineering/claude-code-best-practices#:~:text=Ask%20Claude%20to%20write%20tests)
 
 > "Demandez à Claude d'écrire des tests basés sur des paires entrée/sortie attendues. Soyez explicite sur le fait que vous faites du développement piloté par les tests pour qu'il évite de créer des implémentations fictives, même pour des fonctionnalités qui n'existent pas encore dans la base de code. Dites à Claude d'exécuter les tests et de confirmer qu'ils échouent. Demandez à Claude de valider les tests quand vous êtes satisfait d'eux. Demandez à Claude d'écrire du code qui passe les tests, en lui demandant de ne pas modifier les tests."
+> — Traduit par Claude
+
+### Traiter le code de l'IA comme une Pull Request
+
+Examinez le code généré par l'IA comme s'il s'agissait d'une pull request d'un collègue, en fournissant des commentaires itératifs que l'assistant doit traiter plutôt que de l'éditer directement vous-même.
+
+> "treating the generated code as a Merge Request on which you submit comment for correction"
+> — [HN Discussion](https://news.ycombinator.com/item?id=45415232)
+
+> "traiter le code généré comme une Merge Request sur laquelle vous soumettez des commentaires pour correction"
 > — Traduit par Claude
 
 ## Techniques transversales

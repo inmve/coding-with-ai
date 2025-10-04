@@ -1,4 +1,4 @@
-> **Desenvolvimento Ativo** — Atualizado em 29 de setembro de 2025
+> **Desenvolvimento Ativo** — Atualizado em 4 de outubro de 2025
 > [Ver todas as atualizações →](CHANGELOG.md)
 >
 > **Nota:** Para a melhor experiência, visite o [site](https://coding-with-ai.dev) onde você pode ver a popularidade de cada técnica com base no engajamento da comunidade e descobrir quais abordagens os desenvolvedores consideram mais valiosas.
@@ -420,6 +420,16 @@ Faça um agente escrever código, depois use um agente novo para revisar e encon
 > — [Anthropic](https://www.anthropic.com/engineering/claude-code-best-practices#:~:text=Have%20one%20Claude%20write%20code)
 
 > "Use o Claude para escrever código. Execute `/clear` ou inicie um segundo Claude em outro terminal. Faça o segundo Claude revisar o trabalho do primeiro Claude. Inicie outro Claude (ou `/clear` novamente) para ler tanto o código quanto o feedback da revisão. Faça este Claude editar o código com base no feedback. Esta separação frequentemente produz melhores resultados do que ter um único Claude lidando com tudo."
+> — Traduzido por Claude
+
+### Tratar Código da IA como Pull Request
+
+Revise o código gerado pela IA como se fosse um pull request de um colega, fornecendo comentários iterativos para o assistente abordar em vez de editar diretamente você mesmo.
+
+> "treating the generated code as a Merge Request on which you submit comment for correction"
+> — [HN Discussion](https://news.ycombinator.com/item?id=45415232)
+
+> "tratar o código gerado como um Merge Request no qual você envia comentários para correção"
 > — Traduzido por Claude
 
 ### Editar Código no Diff

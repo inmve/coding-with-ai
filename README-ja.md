@@ -1,4 +1,4 @@
-> **アクティブな開発** — 2025年9月19日更新  
+> **アクティブな開発** — 2025年10月4日更新  
 > 最新：新しいプランニングとモデル選択技術を追加  
 > [すべての更新を見る →](CHANGELOG.md)
 
@@ -394,6 +394,16 @@ AIエージェントがログを読んで何が起こっているかを理解し
 > — [Anthropic](https://www.anthropic.com/engineering/claude-code-best-practices#:~:text=Ask%20Claude%20to%20write%20tests)
 
 > "期待される入力/出力ペアに基づいてClaudeにテストを書くように依頼してください。テスト駆動開発を行っていることを明示して、コードベースにまだ存在しない機能であっても、モック実装の作成を避けるようにしてください。Claudeにテストを実行して失敗することを確認するように伝えてください。満足したらClaudeにテストをコミットするように依頼してください。テストを変更しないよう指示して、テストをパスするコードを書くようにClaudeに依頼してください。"
+> — Claudeによる翻訳
+
+### AIコードをプルリクエストとして扱う
+
+AI生成コードを同僚のプルリクエストのようにレビューし、自分で直接編集するのではなく、アシスタントが対処すべき反復的なフィードバックコメントを提供します。
+
+> "treating the generated code as a Merge Request on which you submit comment for correction"
+> — [HN Discussion](https://news.ycombinator.com/item?id=45415232)
+
+> "生成されたコードをマージリクエストとして扱い、修正のためのコメントを提出する"
 > — Claudeによる翻訳
 
 ## 横断的技術
