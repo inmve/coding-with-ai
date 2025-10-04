@@ -2,6 +2,11 @@
 
 All notable changes to the Coding with AI techniques collection are documented here.
 
+## October 4, 2025 - v0.4
+
+### Added
+- "Treat AI Code as Pull Request" technique to Testing & QA - Review AI-generated code with PR-style feedback comments
+
 ## September 29, 2025 - v0.3
 
 ### Added
