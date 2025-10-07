@@ -1,4 +1,4 @@
-> **Active Development** — Updated October 4, 2025
+> **Active Development** — Updated October 6, 2025
 > [See all updates →](CHANGELOG.md)
 > 
 > **Note:** For the best experience, visit the [website](https://coding-with-ai.dev) where you can see the popularity of each technique based on community engagement and discover which approaches developers find most valuable.
@@ -119,6 +119,9 @@ Tell the assistant to outline steps, risks, and quick tests before touching code
 
 > "If you want to iterate on the plan, it helps to explicitly include instructions in the prompt to not proceed with implementation until the plan has been accepted by the user."
 > — [Indragie Karunaratne](https://www.indragie.com/blog/i-shipped-a-macos-app-built-entirely-by-claude-code#:~:text=If%20you%20want%20to%20iterate%20on%20the%20plan)
+
+> "Check out the current state of the project in our working tree... Here's my plan... Please execute the first 3-4 tasks. If you have questions, please stop and ask me. DO NOT DEVIATE FROM THE PLAN."
+> — [Jesse Vincent](https://blog.fsck.com/2025/10/05/how-im-using-coding-agents-in-september-2025/#:~:text=Check%20out%20the%20current%20state)
 
 ### Plan with High-Capacity Model
 
@@ -273,6 +276,9 @@ Set up tools to make changes, run tests, see what fails, and try again on their 
 > "Claude is most useful when it's capable of independently driving feedback loops that allow it to make a change, test the change, and gather context on what failed to try another iteration."
 > — [Indragie Karunaratne](https://www.indragie.com/blog/i-shipped-a-macos-app-built-entirely-by-claude-code#:~:text=Claude%20is%20most%20useful%20when)
 
+> "Warnings are a great example. Is your test suite spitting out a warning that something you are using is deprecated? Chuck that at a bot—tell it to run the test suite and figure out how to fix the warning."
+> — [Simon Willison](https://simonwillison.net/2025/Oct/5/parallel-coding-agents/#:~:text=Warnings%20are%20a%20great%20example)
+
 ### Use Subagents to Double-Check
 
 Spawn subagents to verify details or investigate specific questions.
@@ -316,6 +322,9 @@ Have one agent write code, then use a fresh agent to review and find problems.
 
 > "Use Claude to write code. Run `/clear` or start a second Claude in another terminal. Have the second Claude review the first Claude's work. Start another Claude (or `/clear` again) to read both the code and review feedback. Have this Claude edit the code based on the feedback. This separation often yields better results than having a single Claude handle everything."
 > — [Anthropic](https://www.anthropic.com/engineering/claude-code-best-practices#:~:text=Have%20one%20Claude%20write%20code)
+
+> "I open a new tab or window in the same working directory and fire up another agent to implement. When it's done with the next chunk of work, I flip back to the architect. I typically double-`ESC` to reset the architect to a previous checkpoint and tell it to review up to the now-current checkpoint. This reduces context bloat for the architect and gets it to look at again without any biases from the previous implementation."
+> — [Jesse Vincent](https://blog.fsck.com/2025/10/05/how-im-using-coding-agents-in-september-2025/#:~:text=I%20open%20a%20new%20tab)
 
 ### Treat AI Code as Pull Request
 
@@ -527,6 +536,9 @@ Start new chat sessions or use conversation management features.
 ### Ask Open Questions, Not Leading Ones
 
 Avoid 'Am I right that...' questions - instead ask for pros/cons, alternatives, and 'What am I missing?' to counteract LLM's tendency to agree.
+
+> "My best current technique for avoiding this is a bit of role-play that gives the coding agent a reason not to blindly trust the code review... 'A reviewer did some analysis of this PR. They're external, so reading the codebase cold... 1) should we hire this reviewer 2) which of the issues they've flagged should be fixed?'"
+> — [Jesse Vincent](https://blog.fsck.com/2025/10/05/how-im-using-coding-agents-in-september-2025/#:~:text=My%20best%20current%20technique)
 
 ### Use Strong Emphasis in Prompts
 
