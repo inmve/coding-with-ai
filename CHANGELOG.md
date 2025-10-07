@@ -2,6 +2,17 @@
 
 All notable changes to the Coding with AI techniques collection are documented here.
 
+## October 6, 2025 - v0.5
+
+### Added
+- New practitioner quote from Jesse Vincent on "Ask to Plan First" - checkpoint workflow with strict plan adherence
+- New practitioner quote from Simon Willison on "Let It Test and Fix Itself" - automated warning fixes
+- New practitioner quote from Jesse Vincent on "One Writes, Another Reviews" - two-agent architect/implementer workflow with double-ESC context reset technique
+- New practitioner quote from Jesse Vincent on "Challenge AI Assumptions" - external reviewer role-play technique
+
+### Changed
+- Expanded Jesse Vincent's two-agent workflow quote with full context explaining architect/implementer separation and why context reset matters for unbiased code review
+
 ## October 4, 2025 - v0.4
 
 ### Added
