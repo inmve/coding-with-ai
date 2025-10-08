@@ -1,32 +1,15 @@
-> **Desarrollo Activo** — Actualizado 4 de octubre de 2025  
-> Último: Añadidas nuevas técnicas de planificación y selección de modelos  
+> **Desarrollo Activo** - Actualizado 8 de octubre de 2025
 > [Ver todas las actualizaciones →](CHANGELOG.md)
 
 **Idiomas disponibles:** [English](README.md) | [Español](README-es.md) | [Deutsch](README-de.md) | [Français](README-fr.md) | [日本語](README-ja.md)
 
-# Hay una brecha entre las demos de codificación con IA y la realidad diaria
+# Técnicas Prácticas para Programar con Asistentes
 
-He estado usando Claude Code y Codex CLI diariamente durante 6 semanas, y Cursor durante más de un año antes de eso. Buenos resultados, definitivamente más rápido que antes. Pero leyendo lo que otros logran, me seguía preguntando: ¿qué me estoy perdiendo?
+Este recurso organiza técnicas prácticas para trabajar con asistentes de programación por etapa de desarrollo (desde requisitos y planificación hasta revisión y refactorización).
 
-Resulta que bastante.
+Las técnicas provienen de practicantes incluyendo Simon Willison, Armin Ronacher, Indragie Karunaratne, Orta Therox, y el equipo de Anthropic.
 
-Después de investigar cómo los desarrolladores están realmente usando estas herramientas, encontré técnicas específicas que muchos de nosotros no conocemos. [Indragie Karunaratne envió una aplicación completa de macOS con Claude](https://www.indragie.com/blog/i-shipped-a-macos-app-built-entirely-by-claude-code) - ¿pero cómo? Los desarrolladores describen migrar bibliotecas de interfaz completas en horas en lugar de semanas - ¿usando exactamente qué flujo de trabajo?
-
-## Las técnicas que probablemente no estás usando
-
-Hay patrones específicos que separan las ganancias moderadas de los resultados transformadores. Ejemplos:
-
-- **Archivos de memoria** (CLAUDE.md, .cursorrules) que persisten contexto entre sesiones - muchos desarrolladores no saben que existen
-- **Regeneración basada en pruebas** - deja que la IA itere contra las pruebas en lugar de depurar línea por línea
-- **Sesiones paralelas de IA** - ejecuta múltiples agentes simultáneamente usando git worktrees o contenedores
-
-Estas técnicas están dispersas en documentación, posts de blog e hilos. Encontrarlas requiere saber qué buscar.
-
-## Para quién es esto
-
-Si ya estás usando herramientas de codificación con IA pero sospechas que solo estás arañando la superficie - probablemente tienes razón.
-
-Esta colección llena esos vacíos.
+Mantenido por la comunidad y en evolución. Contribuciones bienvenidas.
 
 📝 **Contribuyendo**: Ve [CONTRIBUTING.md](CONTRIBUTING.md) para compartir tus técnicas y experiencias
 
