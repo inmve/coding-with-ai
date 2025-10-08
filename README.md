@@ -1,29 +1,16 @@
-> **Active Development** — Updated October 6, 2025
+> **Active Development** - Updated October 8, 2025
+> Latest: [Vibe engineering philosophy](https://simonwillison.net/2025/Oct/7/vibe-engineering/) added
 > [See all updates →](CHANGELOG.md)
-> 
+>
 > **Note:** For the best experience, visit the [website](https://coding-with-ai.dev) where you can see the popularity of each technique based on community engagement and discover which approaches developers find most valuable.
 
-# There's a gap between AI coding demos and daily reality
+# Practical Techniques for Coding with Assistants
 
-I've been using Claude Code and Codex CLI daily for 6 weeks, and Cursor for over a year before that. Good results, definitely faster than before. But reading what others achieve, I kept wondering: what am I missing?
+This resource organizes practical techniques for working with coding assistants by development stage (from requirements and planning through review and refactoring).
 
-Turns out, quite a bit.
+The techniques draw from practitioners including Simon Willison, Armin Ronacher, Indragie Karunaratne, Orta Therox, and the Anthropic team.
 
-## The techniques you're probably not using
-
-There are specific patterns that separate moderate gains from transformative results. Examples:
-
-- **Memory files** (CLAUDE.md, .cursorrules) that persist context across sessions - many developers don't know these exist
-- **Test-driven regeneration** - let AI iterate against tests instead of debugging line by line
-- **Parallel AI sessions** - run multiple agents simultaneously using git worktrees or containers
-
-These techniques are scattered across documentation, blog posts, and threads. Finding them requires knowing what to look for.
-
-## Who this is for
-
-If you're already using AI coding tools but suspect you're only scratching the surface - you're probably right.
-
-This curated collection fills in those gaps. It's a living document, and you're welcome to share any missing techniques as well as your experience with the existing ones. 
+Community-maintained and living. Contributions welcome. 
 
 🚀 **Live site**: [coding-with-ai.dev](https://coding-with-ai.dev)
 
