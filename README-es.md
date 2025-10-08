@@ -1,5 +1,5 @@
 > **Desarrollo Activo** - Actualizado 8 de octubre de 2025
-> [Cómo sincronizar CLAUDE.md, AGENTS.md y .cursorrules →](https://coding-with-ai.dev/posts/sync-claude-code-codex-cursor-memory/)
+> [Nuevo post explicando la técnica "Centralizar Archivos de Memoria" →](https://coding-with-ai.dev/posts/sync-claude-code-codex-cursor-memory/)
 
 **Idiomas disponibles:** [English](README.md) | [Español](README-es.md) | [Deutsch](README-de.md) | [Français](README-fr.md) | [日本語](README-ja.md)
 
