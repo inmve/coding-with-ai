@@ -1,5 +1,4 @@
 > **Active Development** - Updated October 8, 2025
-> Latest: [Vibe engineering philosophy](https://simonwillison.net/2025/Oct/7/vibe-engineering/) added
 > [See all updates →](CHANGELOG.md)
 >
 > **Note:** For the best experience, visit the [website](https://coding-with-ai.dev) where you can see the popularity of each technique based on community engagement and discover which approaches developers find most valuable.

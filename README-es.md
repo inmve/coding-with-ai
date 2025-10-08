@@ -1,5 +1,4 @@
 > **Desarrollo Activo** - Actualizado 8 de octubre de 2025
-> Último: [Filosofía de ingeniería vibe](https://simonwillison.net/2025/Oct/7/vibe-engineering/) añadida
 > [Ver todas las actualizaciones →](CHANGELOG.md)
 
 **Idiomas disponibles:** [English](README.md) | [Español](README-es.md) | [Deutsch](README-de.md) | [Français](README-fr.md) | [日本語](README-ja.md)
