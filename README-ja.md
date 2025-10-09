@@ -1,8 +1,18 @@
-> **アクティブな開発** — 2025年10月4日更新  
-> 最新：新しいプランニングとモデル選択技術を追加  
+> **アクティブな開発** — 2025年10月4日更新
+> 最新：新しいプランニングとモデル選択技術を追加
 > [すべての更新を見る →](CHANGELOG.md)
 
 **利用可能言語：** [English](README.md) | [Español](README-es.md) | [Deutsch](README-de.md) | [Français](README-fr.md) | [日本語](README-ja.md)
+
+<div align="center">
+
+![GitHub stars](https://img.shields.io/github/stars/inmve/awesome-ai-coding-techniques?style=social)
+
+</div>
+
+# Awesome AI Coding Techniques
+
+**AIでのコーディングのための実践的なテクニック - コミュニティ主導で実践者によってテスト済み**
 
 # AIコーディングデモと日常の現実の間にはギャップがある
 
