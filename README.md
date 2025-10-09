@@ -3,9 +3,17 @@
 >
 > **Note:** For the best experience, visit the [website](https://coding-with-ai.dev) where you can see the popularity of each technique based on community engagement and discover which approaches developers find most valuable.
 
-# Practical Techniques for Coding with Assistants
+<div align="center">
 
-This resource organizes practical techniques for working with coding assistants by development stage (from requirements and planning through review and refactoring).
+![GitHub stars](https://img.shields.io/github/stars/inmve/awesome-ai-coding-techniques?style=social)
+
+</div>
+
+# Awesome AI Coding Techniques
+
+**Practical techniques for coding with AI - Community-driven and practitioner-tested**
+
+This resource organizes techniques for working with coding assistants by development stage (from requirements and planning through review and refactoring).
 
 The techniques draw from practitioners including Simon Willison, Armin Ronacher, Indragie Karunaratne, Orta Therox, and the Anthropic team.
 

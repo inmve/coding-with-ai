@@ -1,6 +1,18 @@
 # Changelog
 
-All notable changes to the Coding with AI techniques collection are documented here.
+All notable changes to the Awesome AI Coding Techniques collection are documented here.
+
+## October 10, 2025 - v0.6
+
+### Changed
+- **Repository renamed** from `coding-with-ai` to `awesome-ai-coding-techniques` for better discoverability
+- Updated README title to "Awesome AI Coding Techniques" with subtitle emphasizing community-driven and practitioner-tested content
+- All old repository links redirect automatically via GitHub
+
+### Migration Notes
+- Website domain remains `coding-with-ai.dev` (unchanged)
+- All external links and stars/forks preserved
+- Local clones: Update remote URL with `git remote set-url origin https://github.com/inmve/awesome-ai-coding-techniques.git`
 
 ## October 6, 2025 - v0.5
 
