@@ -1,8 +1,18 @@
-> **Développement Actif** — Mis à jour le 4 octobre 2025  
-> Dernière : Ajout de nouvelles techniques de planification et de sélection de modèles  
+> **Développement Actif** — Mis à jour le 10 octobre 2025
+> Dernière : Ajout de nouvelles techniques de planification et de sélection de modèles
 > [Voir toutes les mises à jour →](CHANGELOG.md)
 
 **Langues disponibles :** [English](README.md) | [Español](README-es.md) | [Deutsch](README-de.md) | [Français](README-fr.md) | [日本語](README-ja.md)
+
+<div align="center">
+
+![GitHub stars](https://img.shields.io/github/stars/inmve/awesome-ai-coding-techniques?style=social)
+
+</div>
+
+# Awesome AI Coding Techniques
+
+**Techniques pratiques pour coder avec l'IA - Piloté par la communauté et testé par des praticiens**
 
 # Il y a un fossé entre les démos de codage IA et la réalité quotidienne
 

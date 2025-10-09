@@ -1,11 +1,19 @@
-> **Desarrollo Activo** - Actualizado 8 de octubre de 2025
-> [Ver todas las actualizaciones →](CHANGELOG.md)
+> **Desarrollo Activo** - Actualizado 10 de octubre de 2025
+> [Cómo usar Claude Code junto con Codex o Cursor](https://coding-with-ai.dev/posts/sync-claude-code-codex-cursor-memory/)
 
 **Idiomas disponibles:** [English](README.md) | [Español](README-es.md) | [Deutsch](README-de.md) | [Français](README-fr.md) | [日本語](README-ja.md)
 
-# Técnicas Prácticas para Programar con Asistentes
+<div align="center">
 
-Este recurso organiza técnicas prácticas para trabajar con asistentes de programación por etapa de desarrollo (desde requisitos y planificación hasta revisión y refactorización).
+![GitHub stars](https://img.shields.io/github/stars/inmve/awesome-ai-coding-techniques?style=social)
+
+</div>
+
+# Awesome AI Coding Techniques
+
+**Técnicas prácticas para programar con IA - Impulsado por la comunidad y probado por profesionales**
+
+Este recurso organiza técnicas para trabajar con asistentes de programación por etapa de desarrollo (desde requisitos y planificación hasta revisión y refactorización).
 
 Las técnicas provienen de practicantes incluyendo Simon Willison, Armin Ronacher, Indragie Karunaratne, Orta Therox, y el equipo de Anthropic.
 

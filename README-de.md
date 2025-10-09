@@ -1,8 +1,18 @@
-> **Aktive Entwicklung** — Aktualisiert am 4. Oktober 2025  
-> Neueste: Neue Planungs- und Modellauswahl-Techniken hinzugefügt  
+> **Aktive Entwicklung** — Aktualisiert am 10. Oktober 2025
+> Neueste: Neue Planungs- und Modellauswahl-Techniken hinzugefügt
 > [Alle Updates ansehen →](CHANGELOG.md)
 
-**Verfügbare Sprachen:** [English](README.md) | [Español](README-es.md) | [Deutsch](README-de.md) | [Français](README-fr.md) | [日本語](README-ja.md)
+**Verfügbare Sprachen:** [English](README.md) | [Español](README-de.md) | [Deutsch](README-de.md) | [Français](README-fr.md) | [日本語](README-ja.md)
+
+<div align="center">
+
+![GitHub stars](https://img.shields.io/github/stars/inmve/awesome-ai-coding-techniques?style=social)
+
+</div>
+
+# Awesome AI Coding Techniques
+
+**Praktische Techniken für das Programmieren mit KI - Community-gesteuert und von Praktikern getestet**
 
 # Es gibt eine Lücke zwischen AI-Coding-Demos und der täglichen Realität
 

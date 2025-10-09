@@ -1,7 +1,17 @@
-> **Desenvolvimento Ativo** — Atualizado em 4 de outubro de 2025
+> **Desenvolvimento Ativo** — Atualizado em 10 de outubro de 2025
 > [Ver todas as atualizações →](CHANGELOG.md)
 >
 > **Nota:** Para a melhor experiência, visite o [site](https://coding-with-ai.dev) onde você pode ver a popularidade de cada técnica com base no engajamento da comunidade e descobrir quais abordagens os desenvolvedores consideram mais valiosas.
+
+<div align="center">
+
+![GitHub stars](https://img.shields.io/github/stars/inmve/awesome-ai-coding-techniques?style=social)
+
+</div>
+
+# Awesome AI Coding Techniques
+
+**Técnicas práticas para codificar com IA - Impulsionado pela comunidade e testado por profissionais**
 
 # Há uma lacuna entre as demos de codificação com IA e a realidade diária
 
